@@ -1,148 +1,237 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions Légales | Growth Together</title>
-    <meta name="description" content="Mentions légales, conditions d'utilisation et politique de confidentialité de l'association Growth Together.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions Légales & Confidentialité | Growth Together</title>
+  <meta name="description" content="Mentions légales, gouvernance associative marocaine et politique de confidentialité de l'association Growth Together (GT).">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Polices Officielles du Design System : Satoshi & Open Sans -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icônes Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: 120px;
-            padding-bottom: 4rem;
-        }
-        .legal-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        .legal-content h2 {
-            font-size: 1.5rem;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        .legal-content p, .legal-content li {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-        .legal-content ul {
-            padding-left: 1.5rem;
-            list-style: disc;
-        }
-        .legal-content ul li {
-            margin-bottom: 0.5rem;
-        }
-        .legal-content a {
-            color: var(--primary);
-            text-decoration: underline;
-        }
-    </style>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .legal-container {
+      padding: var(--gt-space-16) 0 var(--gt-space-20) 0;
+    }
+    .legal-content {
+      max-width: 68ch; /* Règle d'or de confort de lecture */
+      margin: 0 auto;
+    }
+    .legal-content h1 {
+      margin-bottom: var(--gt-space-6);
+    }
+    .legal-content h2 {
+      margin-top: var(--gt-space-10);
+      margin-bottom: var(--gt-space-3);
+      font-size: var(--gt-text-2xl);
+      color: var(--gt-color-bleu-ardoise);
+      border-bottom: 1px solid var(--gt-border-subtle);
+      padding-bottom: var(--gt-space-2);
+    }
+    [data-theme="dark"] .legal-content h2 {
+      color: var(--gt-color-bleu-brume);
+    }
+    .legal-content p, .legal-content li {
+      color: var(--gt-text-muted);
+      line-height: var(--gt-leading-normal);
+      margin-bottom: var(--gt-space-4);
+      font-size: var(--gt-text-base);
+    }
+    .legal-content ul {
+      list-style: disc;
+      padding-left: var(--gt-space-6);
+      margin-bottom: var(--gt-space-6);
+    }
+    .legal-content a {
+      color: var(--gt-interactive-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  </style>
+
+  <!-- Prévention du FOUC de thème -->
+  <script>
+    const savedTheme = localStorage.getItem('gt-theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar scrolled">
-        <div class="nav-container nav-content">
-            <a href="../index.html" class="logo-link">
-                <img src="../assets/logo.png" alt="Growth Together Logo" class="logo">
-                <span class="logo-text">Growth Together</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../index.html#about">À Propos</a></li>
-                <li><a href="membres-ag.html">Équipe</a></li>
-                <li><a href="../forum/index.html">Forum 2026</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-            <a href="../forum/index.html" class="btn btn-outline" id="nav-cta">Forum 2026</a>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Legal Content -->
-    <div class="container legal-content">
-        <h1>Mentions <span class="accent">Légales</span></h1>
+<body>
+  <!-- Lien d'évitement accessibilité -->
+  <a href="#main-content" class="sr-only-focusable">Aller au contenu principal</a>
+
+  <!-- Barre de Navigation Supérieure -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+      <div class="container nav-container">
+        <a href="../index.html" class="nav-brand" aria-label="Accueil Growth Together">
+          <img src="../assets/Fichier 239gt logo.svg" alt="Growth Together" class="nav-logo-svg" height="38">
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Accueil</a>
+          <a href="../index.html#piliers" class="nav-link">Piliers</a>
+          <a href="../index.html#objectifs" class="nav-link">Objectifs</a>
+          <a href="membres-ag.html" class="nav-link">Équipe</a>
+          <a href="../forum/index.html" class="nav-link">Forum 2026</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Rejoindre GT</a>
+          <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu Principal -->
+  <main id="main-content" class="legal-container">
+    <div class="container">
+      <article class="legal-content">
+        <span class="badge badge-pillar" style="margin-bottom: var(--gt-space-3);">Cadre Réglementaire & Transparence</span>
+        <h1 class="display-title">Mentions Légales & <span class="text-elan">Politique de Confidentialité</span></h1>
 
         <h2>1. Identification de l'éditeur</h2>
-        <p>Le présent site web est édité par :</p>
+        <p>Le présent site internet est édité par l'organisation associative suivante :</p>
         <ul>
-            <li><strong>Dénomination :</strong> Growth Together (GT)</li>
-            <li><strong>Forme juridique :</strong> Association à but non lucratif régie par le Dahir n°1-58-376 du 15 novembre 1958, modifié et complété par les lois n°1-73-293 du 10 avril 1973, n°75.00 du 23 juillet 2002 et n°07-09 du 19 février 2009.</li>
-            <li><strong>Siège social :</strong> Casablanca, Maroc</li>
-            <li><strong>Email :</strong> <a href="mailto:agrowthtogether@gmail.com">agrowthtogether@gmail.com</a></li>
-            <li><strong>Téléphone :</strong> +212 0612843918</li>
+          <li><strong>Dénomination officielle :</strong> Growth Together (acronyme d'usage : <strong>GT</strong>)</li>
+          <li><strong>Forme juridique :</strong> Association à but non lucratif régie par la législation marocaine, notamment le Dahir n°1-58-376 du 15 novembre 1958 régissant le droit d'association au Maroc, tel que modifié et complété.</li>
+          <li><strong>Siège social :</strong> Casablanca, Royaume du Maroc</li>
+          <li><strong>Courriel officiel :</strong> <a href="mailto:agrowthtogether@gmail.com">agrowthtogether@gmail.com</a></li>
+          <li><strong>Téléphone :</strong> +212 0612843918</li>
+          <li><strong>Direction de la publication :</strong> Le Conseil d'Administration de Growth Together.</li>
         </ul>
 
-        <h2>2. Objet de l'association</h2>
-        <p>Growth Together est une association areligieuse, apolitique et non syndicale. Elle a pour mission de pousser une jeunesse africaine à se déployer dans sa potentialité. Sa vision est : « Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation ».</p>
-        <p>Les grands domaines d'activités de GT sont : la formation, l'information au travers de ses réseaux, ses forums et ses webinaires.</p>
+        <h2>2. Objet et nature de l'association</h2>
+        <p>
+          Growth Together est une association citoyenne, areligieuse, apolitique et non syndicale. Sa vocation fondamentale est de susciter, accompagner et outiller le déploiement du potentiel entrepreneurial, académique et humain de la jeunesse africaine.
+        </p>
+        <p>
+          Sa signature institutionnelle est <em>« Ground. Grow. Widen.™ »</em> et sa vision motrice : <em>« Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation »</em>.
+        </p>
 
-        <h2>3. Hébergement</h2>
-        <p>Ce site est hébergé par :</p>
+        <h2>3. Hébergement de la plateforme</h2>
+        <p>Le site internet et ses formulaires interactifs sont hébergés par :</p>
         <ul>
-            <li><strong>Hébergeur :</strong> Netlify, Inc.</li>
-            <li><strong>Adresse :</strong> 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis</li>
-            <li><strong>Site web :</strong> <a href="https://www.netlify.com" target="_blank">www.netlify.com</a></li>
+          <li><strong>Hébergeur :</strong> Netlify, Inc.</li>
+          <li><strong>Adresse :</strong> 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis</li>
+          <li><strong>Site officiel :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">www.netlify.com</a></li>
         </ul>
 
-        <h2>4. Conditions d'utilisation</h2>
-        <p>L'utilisation du présent site implique l'acceptation pleine et entière des conditions générales d'utilisation décrites ci-après. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment.</p>
-        <p>Le site Growth Together est proposé en différents services web. L'utilisateur du site reconnaît disposer de la compétence et des moyens nécessaires pour accéder à ce site et l'utiliser.</p>
+        <h2>4. Propriété intellectuelle</h2>
+        <p>
+          L'ensemble des composantes graphiques, éditoriales et architecturales de ce site (charte graphique, logotype officiel, ligature signature, pictogrammes, textes, photographies originales du Forum et structures de données) constitue la propriété exclusive de l'association Growth Together ou fait l'objet d'une licence d'utilisation concédée par ses partenaires.
+        </p>
+        <p>
+          Toute reproduction, représentation, adaptation ou rediffusion totale ou partielle sans autorisation écrite expresse et préalable de l'association est strictement interdite.
+        </p>
 
-        <h2>5. Propriété intellectuelle</h2>
-        <p>L'ensemble des contenus présents sur le site Growth Together (textes, images, graphismes, logo, icônes, vidéos, etc.) est la propriété exclusive de l'association Growth Together ou de ses partenaires. Toute reproduction, distribution, modification, retransmission ou publication de ces éléments est strictement interdite sans l'accord écrit préalable de Growth Together.</p>
-
-        <h2>6. Protection des données personnelles</h2>
-        <p>Conformément à la loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel au Maroc, l'utilisateur bénéficie d'un droit d'accès, de rectification et de suppression des informations le concernant.</p>
-        <p><strong>Données collectées :</strong> Les données personnelles collectées via le formulaire de contact (nom, email, sujet, message) sont utilisées uniquement dans le but de répondre à vos demandes. Elles ne sont ni revendues ni transmises à des tiers.</p>
-        <p><strong>Cookies :</strong> Ce site n'utilise pas de cookies de suivi. Seuls des cookies techniques essentiels au fonctionnement du site peuvent être utilisés.</p>
-        <p>Pour exercer vos droits ou pour toute question relative à la protection de vos données, contactez-nous à : <a href="mailto:agrowthtogether@gmail.com">agrowthtogether@gmail.com</a></p>
-
-        <h2>7. Limitation de responsabilité</h2>
-        <p>Growth Together s'efforce de fournir des informations aussi précises que possible. Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
-        <p>Tous les liens hypertextes présents sur le site et renvoyant vers d'autres sites ne sauraient engager la responsabilité de Growth Together quant au contenu de ces sites.</p>
-
-        <h2>8. Droit applicable</h2>
-        <p>Tout litige en relation avec l'utilisation du site Growth Together est soumis au droit marocain. L'utilisateur reconnaît la compétence exclusive des tribunaux compétents de Casablanca.</p>
-
-        <h2>9. Contact</h2>
-        <p>Pour toute question ou réclamation, vous pouvez nous contacter :</p>
+        <h2>5. Protection des données à caractère personnel</h2>
+        <p>
+          Conformément à la loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, l'utilisateur est informé que les données transmises via le formulaire de contact ou d'inscription aux événements (nom, prénom, adresse électronique, coordonnées téléphoniques) font l'objet d'un traitement loyal et licite.
+        </p>
         <ul>
-            <li>Par email : <a href="mailto:agrowthtogether@gmail.com">agrowthtogether@gmail.com</a></li>
-            <li>Par téléphone : +212 0612843918</li>
-            <li>Via nos réseaux sociaux : 
-                <a href="https://www.linkedin.com/company/agrowthtogether/" target="_blank">LinkedIn</a>, 
-                <a href="https://www.instagram.com/growth_together.a" target="_blank">Instagram</a>, 
-                <a href="https://www.facebook.com/share/1Bh3CekVWM/" target="_blank">Facebook</a>
-            </li>
+          <li><strong>Finalité du traitement :</strong> Répondre aux sollicitations, instruire les candidatures d'adhésion et gérer les réservations aux événements de l'association (forums, webinaires, formations).</li>
+          <li><strong>Confidentialité absolue :</strong> Aucune donnée n'est cédée, louée, commercialisée ou transmise à des tiers sans consentement explicite.</li>
+          <li><strong>Droits des utilisateurs :</strong> Vous bénéficiez d'un droit permanent d'accès, d'opposition, de rectification et de suppression des données vous concernant. Pour exercer ce droit, écrivez à : <a href="mailto:agrowthtogether@gmail.com">agrowthtogether@gmail.com</a>.</li>
         </ul>
 
-        <p style="margin-top: 3rem; color: var(--text-muted); font-size: 0.9rem; text-align: center;">Dernière mise à jour : Avril 2026</p>
+        <h2>6. Cookies et traceurs</h2>
+        <p>
+          Ce site respecte scrupuleusement la vie privée de ses usagers et n'emploie aucun cookie publicitaire ou traceur de profilage commercial. Seule une clé technique locale (<em>localStorage</em> : <code>gt-theme</code>) est utilisée pour mémoriser votre préférence d'affichage (mode clair ou sombre).
+        </p>
+
+        <h2>7. Droit applicable et juridiction compétente</h2>
+        <p>
+          Le présent site et ses conditions d'utilisation sont régis par le droit marocain. En cas de différend relatif à l'interprétation ou à l'exécution des présentes, les tribunaux compétents de Casablanca seront seuls compétents.
+        </p>
+
+        <p style="margin-top: var(--gt-space-8); font-size: var(--gt-text-xs); color: var(--gt-text-muted);">
+          Dernière révision conforme au Design System GT : Septembre 2026.
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer Institutionnel Nuit Profonde (#091116) -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- 1. Marque -->
+      <div class="footer-brand">
+        <img src="../assets/logo.png" alt="Growth Together" class="footer-logo" width="48" height="42">
+        <div class="footer-baseline">Ground. Grow. Widen.™</div>
+        <p class="footer-quote">
+          « Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation. »
+        </p>
+      </div>
+
+      <!-- 2. Démarche -->
+      <div class="footer-column">
+        <h3>Démarche</h3>
+        <ul class="footer-links">
+          <li><a href="../index.html#piliers" class="footer-link">Les 3 Piliers</a></li>
+          <li><a href="../index.html#mission" class="footer-link">Notre Mission</a></li>
+          <li><a href="../index.html#objectifs" class="footer-link">Objectifs</a></li>
+          <li><a href="../index.html#actions" class="footer-link">Formats d'action</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Organisation -->
+      <div class="footer-column">
+        <h3>Organisation</h3>
+        <ul class="footer-links">
+          <li><a href="membres-ag.html" class="footer-link">Conseil & Équipe</a></li>
+          <li><a href="../forum/index.html" class="footer-link">Forum 2026</a></li>
+          <li><a href="mentions-legales.html" class="footer-link">Mentions Légales</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:agrowthtogether@gmail.com" class="footer-link">agrowthtogether@gmail.com</a></li>
+          <li><a href="tel:+2120612843918" class="footer-link">+212 0612843918</a></li>
+          <li><span class="footer-link">Casablanca, Maroc</span></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-bottom text-center" style="padding: 2rem 0;">
-            <p>&copy; 2026 Growth Together. Tous droits réservés. | <a href="../index.html">Retour à l'accueil</a></p>
-        </div>
-    </footer>
+    <!-- Mention légale basse -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Growth Together (GT). Association à but non lucratif. Tous droits réservés.</p>
+        <p><a href="../index.html">Retourner à la page d'accueil</a></p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="../js/main.js"></script>
+  <!-- Commutateur de Thème Accessible -->
+  <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Basculer le mode d'affichage" title="Changer de thème">
+    <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+    <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
 </body>
 </html>

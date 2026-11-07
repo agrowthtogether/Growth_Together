@@ -1,518 +1,530 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
-
+<html lang="fr" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre Équipe | Growth Together</title>
-    <meta name="description"
-        content="Découvrez l'équipe de Growth Together – les cofondateurs et membres de l'Assemblée Générale qui portent la vision panafricaine de l'association.">
-    <link rel="icon" type="image/png" href="../assets/logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Équipe & Assemblée Générale | Growth Together</title>
+  <meta name="description" content="Découvrez les cofondateurs et les membres de l'Assemblée Générale de Growth Together – des profils panafricains unis par une même vision.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
+  <!-- Polices Officielles du Design System : Satoshi & Open Sans -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icônes Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/membres.css">
-    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('gt-theme') || 'dark');</script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/membres.css">
+
+  <!-- Prévention du FOUC de thème -->
+  <script>
+    const savedTheme = localStorage.getItem('gt-theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar scrolled">
-        <div class="nav-container nav-content">
-            <a href="../index.html" class="logo-link">
-                <img src="../assets/logo.png" alt="Growth Together Logo" class="logo">
-                <span class="logo-text">Growth Together</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../index.html#about">À Propos</a></li>
-                <li><a href="../index.html#objectifs">Objectifs</a></li>
-                <li><a href="membres-ag.html" class="active">Équipe</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-            <a href="../forum/index.html" class="btn btn-outline" id="nav-cta">Forum 2026 <i
-                    class="fas fa-arrow-right"></i></a>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+  <!-- Lien d'évitement accessibilité -->
+  <a href="#main-content" class="sr-only-focusable">Aller au contenu principal</a>
+
+  <!-- Barre de Navigation Supérieure -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+      <div class="container nav-container">
+        <a href="../index.html" class="nav-brand" aria-label="Accueil Growth Together">
+          <img src="../assets/Fichier 239gt logo.svg" alt="Growth Together" class="nav-logo-svg" height="38">
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Accueil</a>
+          <a href="../index.html#piliers" class="nav-link">Piliers</a>
+          <a href="../index.html#objectifs" class="nav-link">Objectifs</a>
+          <a href="membres-ag.html" class="nav-link active" aria-current="page">Équipe</a>
+          <a href="../forum/index.html" class="nav-link">Forum 2026</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
         </div>
+
+        <div class="nav-actions">
+          <a href="../index.html#contact" class="btn btn-primary btn-sm">Rejoindre GT</a>
+          <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </nav>
+  </header>
 
-    <!-- Page Hero -->
-    <section class="membres-hero">
-        <div class="membres-hero-bg"></div>
-        <div class="container membres-hero-content">
-            <div class="badge fade-in-up">Notre Équipe</div>
-            <h1 class="fade-in-up delay-1">Ceux qui portent <span class="accent">Growth Together</span></h1>
-            <p class="membres-hero-subtitle fade-in-up delay-2">Cofondateurs et membres de l'Assemblée Générale, unis
-                par une même ambition : éveiller et accompagner la jeunesse africaine.</p>
-        </div>
+  <!-- Contenu Principal -->
+  <main id="main-content">
+    
+    <!-- Hero Page Équipe -->
+    <section class="team-hero">
+      <div class="container">
+        <span class="badge badge-pillar" style="margin-bottom: var(--gt-space-3);">Capital Humain & Engagement</span>
+        <h1 class="display-title">Ceux qui portent <span class="text-elan">Growth Together</span></h1>
+        <p class="team-hero-subtitle">
+          Cofondateurs, membres du bureau et de l'Assemblée Générale : des profils diversifiés unis par la même volonté d'éveiller et d'outiller la jeunesse africaine.
+        </p>
+      </div>
     </section>
 
-    <!-- Stats Bar -->
-    <section class="membres-stats-bar">
-        <div class="container">
-            <div class="membres-stats-grid">
-                <div class="membres-stat-item fade-in-up">
-                    <div class="membres-stat-number">18</div>
-                    <div class="membres-stat-label">Membres</div>
-                </div>
-                <div class="membres-stat-item fade-in-up delay-1">
-                    <div class="membres-stat-number">3</div>
-                    <div class="membres-stat-label">Cofondateurs</div>
-                </div>
-                <div class="membres-stat-item fade-in-up delay-2">
-                    <div class="membres-stat-number">8+</div>
-                    <div class="membres-stat-label">Nationalités</div>
-                </div>
-                <div class="membres-stat-item fade-in-up delay-3">
-                    <div class="membres-stat-number">1</div>
-                    <div class="membres-stat-label">Vision commune</div>
-                </div>
-            </div>
+    <!-- Chiffres Équipe -->
+    <section class="team-stats-bar" aria-label="Données clés de l'équipe">
+      <div class="container">
+        <div class="team-stats-grid">
+          <div class="team-stat-item reveal">
+            <div class="team-stat-number counter-animated" data-target="18">0</div>
+            <div class="team-stat-label">Membres engagés</div>
+          </div>
+          <div class="team-stat-item reveal reveal-delay-1">
+            <div class="team-stat-number counter-animated" data-target="3">0</div>
+            <div class="team-stat-label">Cofondateurs</div>
+          </div>
+          <div class="team-stat-item reveal reveal-delay-2">
+            <div class="team-stat-number counter-animated" data-target="8" data-suffix="+">0</div>
+            <div class="team-stat-label">Nationalités</div>
+          </div>
+          <div class="team-stat-item reveal reveal-delay-3">
+            <div class="team-stat-number counter-animated" data-target="1">0</div>
+            <div class="team-stat-label">Vision partagée</div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ========== DIRECTION & COFONDATEURS ========== -->
-    <section class="section bg-dark" id="direction">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Direction & <span class="accent">Cofondateurs</span></h2>
-                <p class="section-subtitle">Les visionnaires qui ont fondé et dirigent Growth Together.</p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="fondateurs-list">
-
-                <!-- Joseph Brou Kouame -->
-                <div class="glass-card fondateur-card slide-in-left" id="membre-joseph">
-                    <div class="fondateur-text">
-                        <span class="fondateur-badge"><i class="fas fa-crown"></i> Cofondateur</span>
-                        <h3>Joseph Brou Kouame</h3>
-                        <span class="fondateur-role">Président du Conseil Administratif</span>
-                        <p>Visionnaire et cofondateur de Growth Together, il préside le Conseil Administratif et impulse
-                            la direction stratégique de l'association.</p>
-                    </div>
-                    <div class="fondateur-photo">
-                        <img src="../assets/photos/equipe/Joseph_BROU KOUAME.jpeg" alt="Joseph Brou Kouame"
-                            loading="lazy">
-                        <div class="fondateur-photo-border"></div>
-                    </div>
-                </div>
-
-                <!-- Marie France KRA -->
-                <div class="glass-card fondateur-card fondateur-card--reversed slide-in-right" id="membre-marie">
-                    <div class="fondateur-text">
-                        <span class="fondateur-badge"><i class="fas fa-crown"></i> Cofondatrice</span>
-                        <h3>Marie France KRA</h3>
-                        <span class="fondateur-role">Vice-Présidente & Directrice du Conseil de Contrôle</span>
-                        <p>Cofondatrice et Directrice du Conseil de Contrôle, elle veille à la bonne gouvernance et au
-                            respect de la mission de GT.</p>
-                    </div>
-                    <div class="fondateur-photo">
-                        <img src="../assets/photos/equipe/Marie-France_KRA.jpeg" alt="Marie France KRA" loading="lazy">
-                        <div class="fondateur-photo-border"></div>
-                    </div>
-                </div>
-
-                <!-- Benjamin ISTEFANAS -->
-                <div class="glass-card fondateur-card slide-in-left" id="membre-benjamin">
-                    <div class="fondateur-text">
-                        <span class="fondateur-badge"><i class="fas fa-crown"></i> Cofondateur</span>
-                        <h3>Benjamin ISTEFANAS</h3>
-                        <span class="fondateur-role">Directeur du Conseil Exécutif</span>
-                        <p>Cofondateur et à la tête du Conseil Exécutif, il pilote la gestion opérationnelle et
-                            stratégique de Growth Together.</p>
-                    </div>
-                    <div class="fondateur-photo">
-                        <img src="../assets/photos/equipe/Benjamin_ISTEFANAS.jpeg" alt="Benjamin ISTEFANAS"
-                            loading="lazy">
-                        <div class="fondateur-photo-border"></div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Section 1 : Direction & Cofondateurs -->
+    <section class="direction-section" id="direction">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Conseil d'Administration & Exécutif</span>
+          <h2 class="section-title">La Direction Fondatrice</h2>
+          <p class="section-subtitle text-center">
+            Les cofondateurs qui garantissent la gouvernance, l'intégrité de la mission et le développement opérationnel de GT.
+          </p>
         </div>
+
+        <div class="direction-list">
+          <!-- 1. Joseph Brou Kouame -->
+          <article class="director-card">
+            <div class="director-photo">
+              <img src="../assets/photos/equipe/Joseph_BROU KOUAME.jpeg" 
+                   style="object-position: 35% 20%;"
+                   alt="Joseph Brou Kouame, Président du Conseil Administratif" 
+                   loading="lazy">
+            </div>
+            <div class="director-info">
+              <div class="director-badge">
+                <span class="badge badge-accent"><i class="fas fa-crown" aria-hidden="true"></i> Cofondateur</span>
+              </div>
+              <h3 class="director-name">Joseph Brou Kouame</h3>
+              <div class="director-role">Président du Conseil Administratif</div>
+              <p class="director-bio">
+                Initiateur de la vision Growth Together, il oriente les axes stratégiques majeurs de l'organisation, anime le Conseil d'Administration et veille à l'adéquation constante des projets avec la raison d'être de l'association.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2. Marie France KRA -->
+          <article class="director-card director-card--reversed">
+            <div class="director-photo">
+              <img src="../assets/photos/equipe/Marie-France_KRA.jpeg" 
+                   style="object-position: center 20%;"
+                   alt="Marie France KRA, Vice-Présidente et Directrice du Conseil de Contrôle" 
+                   loading="lazy">
+            </div>
+            <div class="director-info">
+              <div class="director-badge">
+                <span class="badge badge-accent"><i class="fas fa-crown" aria-hidden="true"></i> Cofondatrice</span>
+              </div>
+              <h3 class="director-name">Marie France KRA</h3>
+              <div class="director-role">Vice-Présidente & Directrice du Conseil de Contrôle</div>
+              <p class="director-bio">
+                Cofondatrice engagée, elle pilote le Conseil de Contrôle pour garantir la transparence financière, la conformité réglementaire et le strict respect des statuts éthiques de l'association.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. Benjamin ISTEFANAS -->
+          <article class="director-card">
+            <div class="director-photo">
+              <img src="../assets/photos/equipe/Benjamin_ISTEFANAS.jpeg" 
+                   style="object-position: center 15%;"
+                   alt="Benjamin ISTEFANAS, Directeur du Conseil Exécutif" 
+                   loading="lazy">
+            </div>
+            <div class="director-info">
+              <div class="director-badge">
+                <span class="badge badge-accent"><i class="fas fa-crown" aria-hidden="true"></i> Cofondateur</span>
+              </div>
+              <h3 class="director-name">Benjamin ISTEFANAS</h3>
+              <div class="director-role">Directeur du Conseil Exécutif</div>
+              <p class="director-bio">
+                Cofondateur à la tête de la gestion exécutive, il coordonne la mise en œuvre opérationnelle des événements, les partenariats stratégiques et l'animation des pôles d'activités sur le continent.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- ========== MEMBRES DE L'AG ========== -->
-    <section class="section" id="membres-ag">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Membres de <span class="accent-blue">l'Assemblée Générale</span></h2>
-                <p class="section-subtitle">Des profils diversifiés, unis par une même ambition : transformer la
-                    jeunesse africaine.</p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="membres-grid">
-
-                <!-- === SECRÉTAIRES === -->
-
-                <!-- OKA Kouadio Séraphin -->
-                <div class="glass-card membre-card scale-in" id="membre-oka">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/87b127cb-f992-4527-b3f3-05ab07bc410f - Oka Séraphin.jpeg"
-                                alt="OKA Kouadio Séraphin" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>OKA Kouadio Séraphin</h3>
-                            <span class="membre-role">Secrétaire Général</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Ivoirienne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Côte
-                                    d'Ivoire</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mariama Ciré Sow -->
-                <div class="glass-card membre-card scale-in delay-1" id="membre-sow">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/Screenshot_20260206-143144_Gallery - Mariama Ciré.jpg"
-                                style="object-position: center 44%;"
-                                alt="Mariama Ciré Sow" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Mariama Ciré Sow</h3>
-                            <span class="membre-role">Secrétaire Générale Adjointe</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Guinéenne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Kenya</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kouamé Duffi Levi Paul -->
-                <div class="glass-card membre-card scale-in delay-2" id="membre-kouame">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG_8971 - Paul Kouamé.jpeg"
-                                alt="Kouamé Duffi Levi Paul" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Kouamé Duffi Levi Paul</h3>
-                            <span class="membre-role">Secrétaire à la Communication</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Ivoirienne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BIFANE MEFANG Ben Chancia -->
-                <div class="glass-card membre-card scale-in" id="membre-bifane">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG-20260518-WA0019 - Ben Chancia.jpg"
-                                alt="BIFANE MEFANG Ben Chancia" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>BIFANE MEFANG Ben Chancia</h3>
-                            <span class="membre-role">Secrétaire aux Finances</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Gabonaise</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Gabon</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Just Eben-Ezer PARDEVAN -->
-                <div class="glass-card membre-card scale-in delay-1" id="membre-pardevan">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG_7291 - Ebenezer Pardevan.jpeg"
-                                alt="Just Eben-Ezer PARDEVAN" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Just Eben-Ezer PARDEVAN</h3>
-                            <span class="membre-role">Secrétaire à l'Organisation</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Burkinabè</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AKA Marie Emmanuella -->
-                <div class="glass-card membre-card scale-in delay-2" id="membre-aka">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG_1700 - Aka Elloh Marie Emmanuella Adjobah.jpeg"
-                                alt="AKA Marie Emmanuella" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>AKA Marie Emmanuella</h3>
-                            <span class="membre-role">Secrétaire Adjointe aux Affaires Juridiques et
-                                Administratives</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Ivoirienne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Koné Kolo Béatrice -->
-                <div class="glass-card membre-card scale-in" id="membre-kone">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/eff746d5-47ce-4f64-a8e3-09761a057a1b - Béatrice K. Koné.jpeg"
-                                alt="Koné Kolo Béatrice" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Koné Kolo Béatrice</h3>
-                            <span class="membre-role">Secrétaire Adjointe aux Affaires Juridiques et
-                                Administratives</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Ivoirienne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KOUMASSAMBA DHANE DJEMY -->
-                <div class="glass-card membre-card scale-in delay-1" id="membre-dhane">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/Untitled design_20260513_100118_0000 - DHANE D.png"
-                                alt="KOUMASSAMBA Dhane Djemy" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>KOUMASSAMBA Dhane Djemy</h3>
-                            <span class="membre-role">Secrétariat aux Affaires Juridiques et Administratives</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Gabonaise</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- === CHARGÉS & RESPONSABLES === -->
-
-                <!-- Bamba Abou-Bakary -->
-                <div class="glass-card membre-card scale-in delay-2" id="membre-bamba">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/Photo d_identité - Bamba Aboubakary.jpg"
-                                alt="Bamba Abou-Bakary" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Bamba Abou-Bakary</h3>
-                            <span class="membre-role">Chargé aux Affaires Financières</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Ivoirienne</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Diallo Hassatou Dalanda -->
-                <div class="glass-card membre-card scale-in" id="membre-diallo">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG_3300 - Hassatou Diallo.jpeg"
-                                alt="Diallo Hassatou Dalanda" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Diallo Hassatou Dalanda</h3>
-                            <span class="membre-role">Chargée à l'Organisation</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Guinéenne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MAMBO YABA MANUELLA AXELLE -->
-                <div class="glass-card membre-card scale-in delay-1" id="membre-mambo">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG_2148 - Yaba Axelle Mambo.jpeg"
-                                alt="MAMBO Yaba Manuella Axelle" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>MAMBO Yaba Manuella Axelle</h3>
-                            <span class="membre-role">Responsable des Affaires Extérieures</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Ivoirienne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EGBADODJI Komi Eben-ezer -->
-                <div class="glass-card membre-card scale-in delay-2" id="membre-egbadodji">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/EbenP - Eben-ezer Komi EGBADODJI.png"
-                                alt="EGBADODJI Komi Eben-ezer" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>EGBADODJI Komi Eben-ezer</h3>
-                            <span class="membre-role">CAE, Chargé de Communication et Création Design</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Togolaise</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Maroc</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- David EGBAKOU -->
-                <div class="glass-card membre-card scale-in" id="membre-david">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/David EGBAKOU.jpeg"
-                                alt="David EGBAKOU" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>David EGBAKOU</h3>
-                            <span class="membre-role">Chargé à la Communication</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Togolaise</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> France</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HOUNKPATIN Loïc -->
-                <div class="glass-card membre-card scale-in delay-1" id="membre-hounkpatin">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/20260217_103720 - Loïc HOUNKPATIN.jpg"
-                                alt="HOUNKPATIN Loïc" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>HOUNKPATIN Loïc</h3>
-                            <span class="membre-role">Chargé de Communication</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Béninoise</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> France</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Rahila Abdou Jonathan -->
-                <div class="glass-card membre-card scale-in delay-2" id="membre-rahila">
-                    <div class="membre-card-inner">
-                        <div class="membre-photo">
-                            <img src="../assets/membres/Photo pro (File responses)/IMG_9185 - Rachel Abdou Jonathan.jpeg"
-                                alt="Rahila Abdou Jonathan" loading="lazy">
-                            <div class="membre-photo-overlay"></div>
-                        </div>
-                        <div class="membre-info">
-                            <h3>Rahila Abdou Jonathan</h3>
-                            <span class="membre-role">Chargée des Réseaux Sociaux</span>
-                            <div class="membre-meta">
-                                <span class="membre-flag"><i class="fas fa-globe-africa"></i> Nigérienne</span>
-                                <span class="membre-location"><i class="fas fa-map-marker-alt"></i> Canada</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Section 2 : Membres de l'Assemblée Générale -->
+    <section class="ag-section" id="ag-membres">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Assemblée Générale</span>
+          <h2 class="section-title">Les Membres Actifs de l'AG</h2>
+          <p class="section-subtitle text-center">
+            Les responsables opérationnels qui animent les secrétariats, les finances, la communication et l'organisation au quotidien.
+          </p>
         </div>
+
+        <div class="members-grid">
+          <!-- 1. OKA Kouadio Séraphin -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/87b127cb-f992-4527-b3f3-05ab07bc410f - Oka Séraphin.jpeg" 
+                   style="object-position: center 5%;"
+                   alt="OKA Kouadio Séraphin" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">OKA Kouadio Séraphin</h3>
+              <div class="member-role">Secrétaire Général</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Ivoirienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Côte d'Ivoire</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Mariama Ciré Sow -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/Screenshot_20260206-143144_Gallery - Mariama Ciré.jpg" 
+                   style="object-position: center 30%;"
+                   alt="Mariama Ciré Sow" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Mariama Ciré Sow</h3>
+              <div class="member-role">Secrétaire Générale Adjointe</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Guinéenne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kenya</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Kouamé Duffi Levi Paul -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG_8971 - Paul Kouamé.jpeg" 
+                   style="object-position: center 8%;"
+                   alt="Kouamé Duffi Levi Paul" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Kouamé Duffi Levi Paul</h3>
+              <div class="member-role">Secrétaire à la Communication</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Ivoirienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. BIFANE MEFANG Ben Chancia -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG-20260518-WA0019 - Ben Chancia.jpg" 
+                   style="object-position: center 20%;"
+                   alt="BIFANE MEFANG Ben Chancia" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">BIFANE MEFANG Ben Chancia</h3>
+              <div class="member-role">Secrétaire aux Finances</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Gabonaise</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Gabon</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Just Eben-Ezer PARDEVAN -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG_7291 - Ebenezer Pardevan.jpeg" 
+                   style="object-position: center 15%;"
+                   alt="Just Eben-Ezer PARDEVAN" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Just Eben-Ezer PARDEVAN</h3>
+              <div class="member-role">Secrétaire à l'Organisation</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Burkinabè</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. AKA Marie Emmanuella -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG_1700 - Aka Elloh Marie Emmanuella Adjobah.jpeg" 
+                   style="object-position: center 70%;"
+                   alt="AKA Marie Emmanuella" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">AKA Marie Emmanuella</h3>
+              <div class="member-role">Secrétaire Adjointe aux Affaires Juridiques & Administratives</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Ivoirienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Koné Kolo Béatrice -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/eff746d5-47ce-4f64-a8e3-09761a057a1b - Béatrice K. Koné.jpeg" 
+                   style="object-position: center 12%;"
+                   alt="Koné Kolo Béatrice" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Koné Kolo Béatrice</h3>
+              <div class="member-role">Secrétaire Adjointe aux Affaires Juridiques & Administratives</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Ivoirienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. KOUMASSAMBA Dhane Djemy -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/Untitled design_20260513_100118_0000 - DHANE D.png" 
+                   style="object-position: center 15%;"
+                   alt="KOUMASSAMBA Dhane Djemy" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">KOUMASSAMBA Dhane Djemy</h3>
+              <div class="member-role">Secrétariat aux Affaires Juridiques & Administratives</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Gabonaise</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Bamba Abou-Bakary -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/Photo d_identité - Bamba Aboubakary.jpg" 
+                   style="object-position: center 15%;"
+                   alt="Bamba Abou-Bakary" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Bamba Abou-Bakary</h3>
+              <div class="member-role">Chargé aux Affaires Financières</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Ivoirienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Diallo Hassatou Dalanda -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG_3300 - Hassatou Diallo.jpeg" 
+                   style="object-position: center 25%;"
+                   alt="Diallo Hassatou Dalanda" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Diallo Hassatou Dalanda</h3>
+              <div class="member-role">Chargée à l'Organisation</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Guinéenne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. MAMBO Yaba Manuella Axelle -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG_2148 - Yaba Axelle Mambo.jpeg" 
+                   style="object-position: center 15%;"
+                   alt="MAMBO Yaba Manuella Axelle" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">MAMBO Yaba Manuella Axelle</h3>
+              <div class="member-role">Responsable des Affaires Extérieures</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Ivoirienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. EGBADODJI Komi Eben-ezer -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/EbenP - Eben-ezer Komi EGBADODJI.png" 
+                   style="object-position: center 15%;"
+                   alt="EGBADODJI Komi Eben-ezer" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">EGBADODJI Komi Eben-ezer</h3>
+              <div class="member-role">CAE, Communication & Création Design</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Togolaise</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Maroc</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 13. David EGBAKOU -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/David EGBAKOU.jpeg" 
+                   style="object-position: center 18%;"
+                   alt="David EGBAKOU" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">David EGBAKOU</h3>
+              <div class="member-role">Chargé à la Communication</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Togolaise</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> France</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 14. HOUNKPATIN Loïc -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/20260217_103720 - Loïc HOUNKPATIN.jpg" 
+                   style="object-position: center 25%;"
+                   alt="HOUNKPATIN Loïc" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">HOUNKPATIN Loïc</h3>
+              <div class="member-role">Chargé de Communication</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Béninoise</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> France</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 15. Rahila Abdou Jonathan -->
+          <article class="member-card">
+            <div class="member-photo-wrapper">
+              <img src="../assets/membres/Photo pro (File responses)/IMG_9185 - Rachel Abdou Jonathan.jpeg" 
+                   style="object-position: center 35%;"
+                   alt="Rahila Abdou Jonathan" loading="lazy">
+            </div>
+            <div class="member-details">
+              <h3 class="member-name">Rahila Abdou Jonathan</h3>
+              <div class="member-role">Chargée des Réseaux Sociaux</div>
+              <div class="member-tags">
+                <span class="member-tag"><i class="fas fa-globe-africa" aria-hidden="true"></i> Nigérienne</span>
+                <span class="member-tag"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Canada</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="membres-cta">
-        <div class="container text-center">
-            <h2 class="fade-in-up">Envie de <span class="accent">nous rejoindre</span> ?</h2>
-            <p class="fade-in-up delay-1">Growth Together est toujours à la recherche de jeunes engagés et passionnés.
-                Contactez-nous pour en savoir plus !</p>
-            <div class="fade-in-up delay-2">
-                <a href="../index.html#contact" class="btn btn-primary btn-large">Nous Contacter <i
-                        class="fas fa-arrow-right"></i></a>
-            </div>
+    <!-- Call to action Équipe -->
+    <section class="team-cta-section">
+      <div class="container">
+        <div class="team-cta-box">
+          <span class="badge badge-accent" style="margin-bottom: var(--gt-space-3);">Engagement Volontaire</span>
+          <h2>Envie de participer à l'aventure GT ?</h2>
+          <p class="text-muted">
+            Growth Together est continuellement à la recherche de profils passionnés et motivés pour renforcer ses pôles d'activités.
+          </p>
+          <div style="margin-top: var(--gt-space-6);">
+            <a href="../index.html#contact" class="btn btn-primary btn-lg">Nous rejoindre <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="../assets/logo.png" alt="Growth Together" class="footer-logo">
-                <p>Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="../index.html#about">À Propos</a></li>
-                    <li><a href="../index.html#objectifs">Objectifs</a></li>
-                    <li><a href="../index.html#activites">Activités</a></li>
-                    <li><a href="membres-ag.html">Équipe</a></li>
-                    <li><a href="../forum/index.html">Forum 2026</a></li>
-                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> agrowthtogether@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +212 0612843918</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/agrowthtogether/" target="_blank"
-                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/growth_together.a?igsh=MTdxMjJ1Mjh3dGt5Yg==" target="_blank"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1Bh3CekVWM/" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                </div>
-                <p class="mt-2 tag">#agrowthtogether</p>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2026 Growth Together. Tous droits réservés. | <a href="mentions-legales.html">Mentions
-                    Légales</a></p>
-        </div>
-    </footer>
+  </main>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-        <i class="fas fa-sun"></i>
-        <i class="fas fa-moon"></i>
-    </button>
+  <!-- Footer Institutionnel Nuit Profonde (#091116) -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- 1. Marque -->
+      <div class="footer-brand">
+        <img src="../assets/logo.png" alt="Growth Together" class="footer-logo" width="48" height="42">
+        <div class="footer-baseline">Ground. Grow. Widen.™</div>
+        <p class="footer-quote">
+          « Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation. »
+        </p>
+      </div>
 
-    <!-- Scripts -->
-    <script src="../js/main.js"></script>
+      <!-- 2. Démarche -->
+      <div class="footer-column">
+        <h3>Démarche</h3>
+        <ul class="footer-links">
+          <li><a href="../index.html#piliers" class="footer-link">Les 3 Piliers</a></li>
+          <li><a href="../index.html#mission" class="footer-link">Notre Mission</a></li>
+          <li><a href="../index.html#objectifs" class="footer-link">Objectifs</a></li>
+          <li><a href="../index.html#actions" class="footer-link">Formats d'action</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Organisation -->
+      <div class="footer-column">
+        <h3>Organisation</h3>
+        <ul class="footer-links">
+          <li><a href="membres-ag.html" class="footer-link">Conseil & Équipe</a></li>
+          <li><a href="../forum/index.html" class="footer-link">Forum 2026</a></li>
+          <li><a href="mentions-legales.html" class="footer-link">Mentions Légales</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:agrowthtogether@gmail.com" class="footer-link">agrowthtogether@gmail.com</a></li>
+          <li><a href="tel:+2120612843918" class="footer-link">+212 0612843918</a></li>
+          <li><span class="footer-link">Casablanca, Maroc</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mention légale basse -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Growth Together (GT). Association à but non lucratif. Tous droits réservés.</p>
+        <p><a href="mentions-legales.html">Conditions d'utilisation & Mentions Légales</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Commutateur de Thème Accessible -->
+  <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Basculer le mode d'affichage" title="Changer de thème">
+    <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+    <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
 </body>
-
 </html>

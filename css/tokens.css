@@ -1,0 +1,166 @@
+/**
+ * GROWTH TOGETHER (GT) — DESIGN TOKENS
+ * Source d'autorité principale : DESIGN_SYSTEM.md (Charte graphique GT 1)
+ * Version : 1.0.0
+ */
+
+:root {
+  /* ==========================================================================
+     1. COULEURS DE LA CHARTE (VALEURS ABSOLUES) [EXPLICITE]
+     Règle absolue : JAMAIS de noir absolu.
+     ========================================================================== */
+  --gt-color-nuit-profonde: #091116; /* RGB(9, 17, 22) - Structure & texte */
+  --gt-color-bleu-elan:     #2982B3; /* RGB(41, 130, 179) - Action principale */
+  --gt-color-bleu-ardoise:  #1C475F; /* RGB(28, 71, 95) - Structure & dark secondary */
+  --gt-color-bleu-brume:    #DEEEF7; /* RGB(222, 238, 247) - Teinte douce & surfaces */
+  --gt-color-blanc-neutre:  #FAFAFA; /* RGB(250, 250, 250) - Fond clair & texte inverse */
+  
+  --gt-color-orange-elan:   #EC4700; /* RGB(236, 71, 0) - Accent conversion & énergie */
+  --gt-color-gris-neutre:   #E5E7E6; /* RGB(229, 231, 230) - Bordures & séparateurs */
+
+  /* ==========================================================================
+     2. TOKENS SÉMANTIQUES (THÈME CLAIR PAR DÉFAUT) [DÉDUITE]
+     ========================================================================== */
+  --gt-bg-page:         var(--gt-color-blanc-neutre);
+  --gt-bg-surface:      #FFFFFF;
+  --gt-bg-subtle:       var(--gt-color-bleu-brume);
+  --gt-bg-muted:        var(--gt-color-gris-neutre);
+  --gt-bg-inverse:      var(--gt-color-nuit-profonde);
+  --gt-bg-header:       rgba(250, 250, 250, 0.92);
+
+  --gt-text-primary:    var(--gt-color-nuit-profonde);
+  --gt-text-secondary:  var(--gt-color-bleu-ardoise);
+  --gt-text-muted:      #566573;
+  --gt-text-inverse:    var(--gt-color-blanc-neutre);
+
+  --gt-interactive-primary:        var(--gt-color-bleu-elan);
+  --gt-interactive-primary-hover:  var(--gt-color-bleu-ardoise);
+  --gt-interactive-primary-active: #153648;
+  --gt-interactive-accent:         var(--gt-color-orange-elan);
+  --gt-interactive-accent-hover:   #C93D00;
+  --gt-interactive-accent-active:  #A63200;
+
+  --gt-border-subtle:   var(--gt-color-gris-neutre);
+  --gt-border-medium:   #CAD1D5;
+  --gt-border-strong:   var(--gt-color-bleu-ardoise);
+  --gt-border-focus:    var(--gt-color-bleu-elan);
+
+  /* Statuts fonctionnels */
+  --gt-status-success:  #1E824C;
+  --gt-status-warning:  #EC4700;
+  --gt-status-error:    #D92525;
+  --gt-status-info:     #2982B3;
+
+  /* ==========================================================================
+     3. TYPOGRAPHIE & ÉCHELLE DE TEXTE [EXPLICITE] & [DÉDUITE]
+     ========================================================================== */
+  --gt-font-display: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --gt-font-body:    'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Graisses */
+  --gt-font-weight-regular:  400;
+  --gt-font-weight-medium:   500;
+  --gt-font-weight-semibold: 600;
+  --gt-font-weight-bold:     700;
+
+  /* Tailles typographiques proportionnelles */
+  --gt-text-xs:   0.75rem;    /* 12px - micro / overline */
+  --gt-text-sm:   0.875rem;   /* 14px - légende / caption */
+  --gt-text-base: 1rem;       /* 16px - corps compact / formulaires */
+  --gt-text-lg:   1.125rem;   /* 18px - corps standard charte (leading 28px) */
+  --gt-text-xl:   1.25rem;    /* 20px - sous-titres / sections H3 */
+  --gt-text-2xl:  1.5rem;     /* 24px - cartes majeures */
+  --gt-text-3xl:  2.25rem;    /* 36px - sous-titres H2 (exactement 50% de H1) */
+  --gt-text-4xl:  3rem;       /* 48px - titres H1 standards */
+  --gt-text-5xl:  4.5rem;     /* 72px - grand titre H1 / Display H0 desktop */
+
+  /* Interlignages (Line-Heights) */
+  --gt-leading-none:    1;
+  --gt-leading-tight:   1.15;
+  --gt-leading-snug:    1.25;
+  --gt-leading-normal:  1.55; /* ~28px pour un texte à 18px */
+  --gt-leading-relaxed: 1.7;
+
+  /* ==========================================================================
+     4. ÉCHELLE SPATIALE & LAYOUT (GRILLE 8PT) [PROPOSÉE POUR LE WEB]
+     ========================================================================== */
+  --gt-space-1:  0.25rem;  /* 4px */
+  --gt-space-2:  0.5rem;   /* 8px */
+  --gt-space-3:  0.75rem;  /* 12px */
+  --gt-space-4:  1rem;     /* 16px */
+  --gt-space-6:  1.5rem;   /* 24px */
+  --gt-space-8:  2rem;     /* 32px */
+  --gt-space-10: 2.5rem;   /* 40px */
+  --gt-space-12: 3rem;     /* 48px */
+  --gt-space-16: 4rem;     /* 64px */
+  --gt-space-20: 5rem;     /* 80px */
+  --gt-space-24: 6rem;     /* 96px */
+  --gt-space-32: 8rem;     /* 128px */
+
+  --gt-container-narrow:  768px;
+  --gt-container-default: 1200px;
+  --gt-container-wide:    1360px;
+
+  /* ==========================================================================
+     5. RAYONS DE COURBURE & SURFACES [DÉDUITE] & [PROPOSÉE POUR LE WEB]
+     ========================================================================== */
+  --gt-radius-none: 0px;
+  --gt-radius-sm:   4px;
+  --gt-radius-md:   8px;
+  --gt-radius-lg:   12px;
+  --gt-radius-xl:   16px;
+  --gt-radius-full: 9999px;
+
+  /* Ombres & Élévation (Discrètes, zéro ombre lourde / Zéro gradient) [EXPLICITE] */
+  --gt-shadow-none:   none;
+  --gt-shadow-card:   0 1px 3px rgba(9, 17, 22, 0.04);
+  --gt-shadow-hover:  0 6px 16px -2px rgba(9, 17, 22, 0.08);
+  --gt-shadow-modal:  0 16px 36px -4px rgba(9, 17, 22, 0.16);
+  --gt-card-border:   1px solid var(--gt-border-subtle);
+
+  /* ==========================================================================
+     6. MOTION & TRANSITIONS [PROPOSÉE POUR LE WEB]
+     ========================================================================== */
+  --gt-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --gt-duration-fast:   150ms;
+  --gt-duration-normal: 250ms;
+  --gt-duration-slow:   400ms;
+  --gt-transition:      all var(--gt-duration-normal) var(--gt-ease-standard);
+
+  /* Hauteurs d'en-tête */
+  --gt-header-height: 72px;
+  --gt-header-height-mobile: 60px;
+}
+
+/* ==========================================================================
+   SUPPORT DARK MODE DÉDIÉ [DÉDUITE]
+   ========================================================================== */
+[data-theme="dark"], body.dark-mode {
+  --gt-bg-page:         var(--gt-color-nuit-profonde);
+  --gt-bg-surface:      #111E26;
+  --gt-bg-subtle:       var(--gt-color-bleu-ardoise);
+  --gt-bg-muted:        #1A2832;
+  --gt-bg-inverse:      var(--gt-color-blanc-neutre);
+  --gt-bg-header:       rgba(9, 17, 22, 0.92);
+
+  --gt-text-primary:    var(--gt-color-blanc-neutre);
+  --gt-text-secondary:  var(--gt-color-bleu-brume);
+  --gt-text-muted:      #95A5B2;
+  --gt-text-inverse:    var(--gt-color-nuit-profonde);
+
+  --gt-interactive-primary:        var(--gt-color-bleu-elan);
+  --gt-interactive-primary-hover:  #3FA0D6;
+  --gt-interactive-primary-active: #5EB2E2;
+  --gt-interactive-accent:         var(--gt-color-orange-elan);
+  --gt-interactive-accent-hover:   #FF5A14;
+  --gt-interactive-accent-active:  #FF773D;
+
+  --gt-border-subtle:   #1C475F;
+  --gt-border-medium:   #275C7A;
+  --gt-border-strong:   var(--gt-color-bleu-brume);
+  --gt-border-focus:    #3FA0D6;
+
+  --gt-shadow-card:     0 1px 3px rgba(0, 0, 0, 0.2);
+  --gt-shadow-hover:    0 6px 16px -2px rgba(0, 0, 0, 0.35);
+  --gt-card-border:     1px solid #1C475F;
+}
