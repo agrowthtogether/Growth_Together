@@ -5,17 +5,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ==========================================================================
-     1. GESTION DU THÈME (LIGHT PAR DÉFAUT / DARK MODE OPTIONNEL)
+     1. GESTION DU THÈME (SOMBRE PAR DÉFAUT / CLAIR OPTIONNEL)
+     Le thème initial est posé dans le <head> de chaque page pour éviter
+     un flash au chargement ; ici on ne fait que le confirmer.
      ========================================================================== */
   const htmlEl = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
 
-  const savedTheme = localStorage.getItem('gt-theme');
-  if (savedTheme === 'dark' || savedTheme === 'light') {
-    htmlEl.setAttribute('data-theme', savedTheme);
-  } else {
-    htmlEl.setAttribute('data-theme', 'light');
-  }
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem('gt-theme');
+  } catch (e) {}
+  htmlEl.setAttribute('data-theme', savedTheme === 'light' ? 'light' : 'dark');
 
   function updateThemeToggleAria(theme) {
     if (themeToggle) {
@@ -29,10 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const current = htmlEl.getAttribute('data-theme') || 'light';
+      const current = htmlEl.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
       htmlEl.setAttribute('data-theme', next);
-      localStorage.setItem('gt-theme', next);
+      try {
+        localStorage.setItem('gt-theme', next);
+      } catch (e) {}
       updateThemeToggleAria(next);
     });
   }

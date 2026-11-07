@@ -1691,3 +1691,28 @@ body.dark-mode main > section.register-cta-section {
   background-color: var(--gt-bg-surface);
   box-shadow: none;
 }
+
+/* ==========================================================================
+   MODE SOMBRE (thème par défaut) : lisibilité des petits textes colorés
+   Le bleu élan et l'orange élan restent les couleurs des boutons ; pour du
+   texte sur fond nuit profonde, on utilise leurs variantes claires de la charte.
+   ========================================================================== */
+[data-theme="dark"] .section-tag,
+[data-theme="dark"] .hero-baseline,
+[data-theme="dark"] .footer-baseline,
+[data-theme="dark"] .founder-role,
+[data-theme="dark"] .director-role,
+[data-theme="dark"] .member-role,
+[data-theme="dark"] .nav-link.active,
+[data-theme="dark"] .legal-container a:not(.btn) {
+  color: var(--gt-interactive-primary-active); /* #5EB2E2 */
+}
+
+[data-theme="dark"] .text-ardoise {
+  color: var(--gt-text-secondary);
+}
+
+[data-theme="dark"] .badge-accent {
+  color: var(--gt-interactive-accent-active); /* #FF773D */
+  background-color: rgba(255, 119, 61, 0.12);
+}
