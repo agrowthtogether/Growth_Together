@@ -563,3 +563,139 @@
     aspect-ratio: 16 / 8;
   }
 }
+
+/* ==========================================================================
+   HERO : CHIFFRES CLÉS (grands chiffres, sans cadre)
+   ========================================================================== */
+.forum-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 880px;
+  margin: var(--gt-space-8) auto var(--gt-space-10) auto;
+  padding: var(--gt-space-6) 0;
+  border-top: 1px solid var(--gt-border-subtle);
+  border-bottom: 1px solid var(--gt-border-subtle);
+}
+
+.forum-stat {
+  display: flex;
+  flex-direction: column-reverse; /* le chiffre au-dessus, le libellé dessous */
+  align-items: center;
+  gap: var(--gt-space-1);
+  padding: 0 var(--gt-space-4);
+}
+
+.forum-stat + .forum-stat {
+  border-left: 1px solid var(--gt-border-subtle);
+}
+
+.forum-stat-value {
+  margin: 0;
+  font-family: var(--gt-font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: var(--gt-font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--gt-interactive-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.forum-stat-label {
+  font-size: 0.8125rem;
+  font-weight: var(--gt-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gt-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .forum-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--gt-space-6);
+  }
+
+  /* Grille 2 x 2 : séparateur seulement entre les deux colonnes */
+  .forum-stat + .forum-stat {
+    border-left: 0;
+  }
+
+  .forum-stat:nth-child(even) {
+    border-left: 1px solid var(--gt-border-subtle);
+  }
+}
+
+/* ==========================================================================
+   BILAN : PHOTO + ENCART UNIQUE
+   ========================================================================== */
+.forum-about-photo {
+  position: relative;
+  margin: 0;
+  border-radius: var(--gt-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--gt-shadow-card);
+  aspect-ratio: 4 / 5;
+}
+
+.forum-about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  display: block;
+}
+
+.forum-about-badge {
+  position: absolute;
+  left: var(--gt-space-4);
+  right: var(--gt-space-4);
+  bottom: var(--gt-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gt-space-1);
+  padding: var(--gt-space-4) var(--gt-space-6);
+  background-color: rgba(9, 17, 22, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: var(--gt-radius-md);
+  color: var(--gt-color-blanc-neutre);
+}
+
+.forum-about-badge-value {
+  font-family: var(--gt-font-display);
+  font-size: 1.75rem;
+  font-weight: var(--gt-font-weight-bold);
+  line-height: 1.1;
+}
+
+.forum-about-badge-text {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: rgba(250, 250, 250, 0.85);
+}
+
+@media (max-width: 1024px) {
+  .forum-about-photo {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Sur téléphone, l'encart passe sous la photo pour ne pas la masquer */
+@media (max-width: 640px) {
+  .forum-about-photo {
+    aspect-ratio: auto;
+    background-color: var(--gt-color-nuit-profonde);
+  }
+
+  .forum-about-photo img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .forum-about-badge {
+    position: static;
+    border-radius: 0;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
