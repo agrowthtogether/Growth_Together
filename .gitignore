@@ -16,3 +16,7 @@ forum_v2/
 # System files
 .DS_Store
 Thumbs.db
+
+# Fichiers RAW d appareil photo (trop lourds, non utilises par le site)
+*.CR2
+*.cr2

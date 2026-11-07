@@ -471,3 +471,14 @@
     right: var(--gt-space-2);
   }
 }
+
+/* Correctif mobile : la colonne unique ne dépasse jamais l'écran */
+@media (max-width: 1024px) {
+  .forum-about-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .forum-about-grid > * {
+    min-width: 0;
+  }
+}
