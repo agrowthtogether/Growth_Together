@@ -1617,3 +1617,77 @@ html:not(.js) .reveal {
     margin-top: var(--gt-space-2);
   }
 }
+
+/* ==========================================================================
+   FLUX CONTINU ENTRE LES SECTIONS
+   Un seul fond pour toute la page, aucun trait de séparation, plus d'air.
+   Les blocs sombres deviennent des panneaux arrondis posés dans la page
+   au lieu de bandes pleine largeur qui coupent la lecture.
+   ========================================================================== */
+main > section[class] {
+  background-color: transparent;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+main > section.pillars-section,
+main > section.mission-section,
+main > section.objectives-section,
+main > section.actions-section,
+main > section.founders-section,
+main > section.contact-section,
+main > section.forum-about-section,
+main > section.forum-highlights-section,
+main > section.timeline-section,
+main > section.venue-section,
+main > section.gallery-section,
+main > section.ag-section,
+main > section.team-cta-section {
+  padding-top: clamp(4rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+/* La carte prolonge la section contact sans coupure */
+main > section.contact-section {
+  padding-bottom: var(--gt-space-8);
+}
+
+/* Panneaux sombres arrondis (Forum 2026, Cap sur 2027) */
+main > section.forum-highlight-section,
+main > section.register-cta-section {
+  width: min(calc(100% - 2 * var(--gt-space-6)), 1280px);
+  margin: var(--gt-space-8) auto;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  background-color: var(--gt-color-nuit-profonde);
+  border: 1px solid rgba(255, 255, 255, 0.06); /* visible seulement en mode sombre */
+  border-radius: 28px;
+  box-shadow: 0 30px 60px -30px rgba(9, 17, 22, 0.45);
+}
+
+/* Avant le pied de page : un vrai espace pour que le panneau ne colle pas au footer */
+main > section.register-cta-section {
+  margin-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+@media (max-width: 640px) {
+  main > section.forum-highlight-section,
+  main > section.register-cta-section {
+    width: calc(100% - 2 * var(--gt-space-3));
+    border-radius: 20px;
+  }
+}
+
+/* Le pied de page enchaîne sans trait */
+.footer {
+  border-top: 0;
+}
+
+/* Mode sombre : le panneau prend la teinte de surface pour se détacher du fond */
+[data-theme="dark"] main > section.forum-highlight-section,
+[data-theme="dark"] main > section.register-cta-section,
+body.dark-mode main > section.forum-highlight-section,
+body.dark-mode main > section.register-cta-section {
+  background-color: var(--gt-bg-surface);
+  box-shadow: none;
+}
