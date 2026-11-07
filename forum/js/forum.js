@@ -1,134 +1,131 @@
-// Forum-specific JavaScript: Scrollytelling Observer
+/**
+ * GROWTH TOGETHER (GT) — FORUM JAVASCRIPT
+ * Gestion accessible de la visionneuse Lightbox (clavier, tactile, focus).
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    const scrollySteps = document.querySelectorAll('.scrolly-step');
-    const scrollyIcons = document.querySelectorAll('.scrolly-icon');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const galleryItems = document.querySelectorAll('.gallery-item');
 
-    if (scrollySteps.length > 0) {
-        const scrollyObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const stepIndex = entry.target.getAttribute('data-step');
+  if (!lightbox || galleryItems.length === 0) return;
 
-                    scrollySteps.forEach(step => step.classList.remove('active'));
-                    entry.target.classList.add('active');
+  let currentIndex = 0;
+  let lastActiveElement = null;
+  const images = [];
 
-                    scrollyIcons.forEach(icon => icon.classList.remove('active'));
-                    const activeIcon = document.querySelector(`.scrolly-icon[data-step="${stepIndex}"]`);
-                    if (activeIcon) activeIcon.classList.add('active');
-                }
-            });
-        }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
-
-        scrollySteps.forEach(step => scrollyObserver.observe(step));
-    }
-
-    // ===== LIGHTBOX GALLERY =====
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    if (!lightbox || galleryItems.length === 0) return;
-
-    let currentIndex = 0;
-    const images = [];
-
-    // Collect all gallery images
-    galleryItems.forEach((item, index) => {
-        const img = item.querySelector('img');
-        images.push({
-            src: img.src,
-            alt: img.alt
-        });
-
-        item.setAttribute('role', 'button');
-        item.setAttribute('tabindex', '0');
-        item.setAttribute('aria-label', `Ouvrir l'image : ${img.alt}`);
-
-        item.addEventListener('click', () => {
-            openLightbox(index);
-        });
-
-        item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openLightbox(index);
-            }
-        });
+  // Indexation des images de la galerie
+  galleryItems.forEach((item, index) => {
+    const img = item.querySelector('img');
+    images.push({
+      src: img.src,
+      alt: img.alt || `Photo de l'événement Growth Together ${index + 1}`
     });
 
-    function openLightbox(index) {
-        currentIndex = index;
-        updateLightbox();
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('aria-label', `Agrandir l'image : ${img.alt}`);
 
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+    const triggerOpen = () => {
+      lastActiveElement = item;
+      openLightbox(index);
+    };
 
-    function updateLightbox() {
-        lightboxImg.src = images[currentIndex].src;
-        lightboxImg.alt = images[currentIndex].alt;
-        lightboxCaption.textContent = images[currentIndex].alt;
-        lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateLightbox();
-    }
-
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateLightbox();
-    }
-
-    // Event Listeners
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxNext.addEventListener('click', nextImage);
-    lightboxPrev.addEventListener('click', prevImage);
-
-    // Close on background click
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
+    item.addEventListener('click', triggerOpen);
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerOpen();
+      }
     });
+  });
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (lightboxClose) lightboxClose.focus();
+  }
 
-        switch (e.key) {
-            case 'Escape': closeLightbox(); break;
-            case 'ArrowRight': nextImage(); break;
-            case 'ArrowLeft': prevImage(); break;
-        }
-    });
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) {
+      lastActiveElement.focus();
+    }
+  }
 
-    // Touch swipe support
-    let touchStartX = 0;
-    let touchEndX = 0;
+  function updateLightbox() {
+    if (!images[currentIndex]) return;
+    lightboxImg.src = images[currentIndex].src;
+    lightboxImg.alt = images[currentIndex].alt;
+    lightboxCaption.textContent = images[currentIndex].alt;
+    lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+  }
 
-    lightbox.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  }
 
-    lightbox.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  }
 
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                nextImage();
-            } else {
-                prevImage();
-            }
-        }
-    }, { passive: true });
+  // Écouteurs d'événements
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxNext) lightboxNext.addEventListener('click', nextImage);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', prevImage);
+
+  // Fermeture par clic sur l'arrière-plan
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Navigation clavier accessible
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    switch (e.key) {
+      case 'Escape':
+        closeLightbox();
+        break;
+      case 'ArrowRight':
+        nextImage();
+        break;
+      case 'ArrowLeft':
+        prevImage();
+        break;
+    }
+  });
+
+  // Balayage tactile (Mobile Touch Swipe)
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        nextImage();
+      } else {
+        prevImage();
+      }
+    }
+  }, { passive: true });
 });

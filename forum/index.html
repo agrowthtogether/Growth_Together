@@ -1,447 +1,493 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum Growth Together 2026 | Oser pour le changement</title>
-    <meta name="description"
-        content="Participez à la 2ème édition du Forum sur l'entrepreneuriat et l'investissement organisé par Growth Together. 27 Juin 2026 à l'ESCA, Casablanca.">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/logo.png">
+  <meta charset="UTF-8">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');var t='dark';try{var s=localStorage.getItem('gt-theme');if(s==='light'||s==='dark')t=s;}catch(e){}d.setAttribute('data-theme',t);})();</script>
+  <meta name="color-scheme" content="dark light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rétrospective Forum Growth Together 2026 | Oser pour le changement</title>
+  <meta name="description" content="Rétrospective complète de la 2ème édition du Forum sur l'entrepreneuriat et l'investissement de Growth Together, tenue le 27 Juin 2026 à l'ESCA Casablanca.">
+  <!-- Aperçu des liens partagés (WhatsApp, LinkedIn, Facebook…).
+       Une fois le domaine connu, remplacer og:image par une URL absolue (https://…/assets/og-image.jpg). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Growth Together">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Rétrospective Forum Growth Together 2026 | Oser pour le changement">
+  <meta property="og:description" content="Rétrospective complète de la 2ème édition du Forum sur l'entrepreneuriat et l'investissement de Growth Together, tenue le 27 Juin 2026 à l'ESCA Casablanca.">
+  <meta property="og:image" content="../assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
+  <!-- Polices Officielles du Design System : Satoshi & Open Sans -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icônes Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Shared CSS + Forum-specific CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="css/forum.css">
-    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('gt-theme') || 'dark');</script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/forum.css">
+
+  <!-- Prévention du FOUC de thème -->
+  <script>
+    const savedTheme = localStorage.getItem('gt-theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container nav-content">
-            <a href="../index.html" class="logo-link">
-                <img src="../assets/logo.png" alt="Growth Together Logo" class="logo">
-                <span class="logo-text">Growth Together</span>
-            </a>
-            <ul class="nav-links" id="nav-links-menu">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../pages/membres-ag.html">Équipe</a></li>
-                <li><a href="#about">À Propos</a></li>
-                <li><a href="#activities">Activités</a></li>
-                <li><a href="#schedule">Programme</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-            </ul>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSffjEo6CpLZPQrxN1Nc00LuAe-3oYAaK39nSExLU6ISub8bSg/viewform"
-                target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="nav-cta">S'inscrire</a>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu"
-                aria-controls="nav-links-menu">
-                <i class="fas fa-bars"></i>
-            </button>
+  <!-- Lien d'évitement accessibilité -->
+  <a href="#main-content" class="sr-only-focusable">Aller au contenu principal</a>
+
+  <!-- Barre de Navigation Supérieure -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+      <div class="container nav-container">
+        <a href="../index.html" class="nav-brand" aria-label="Accueil Growth Together">
+          <img src="../assets/Fichier 239gt logo.svg" alt="Growth Together" class="nav-logo-svg" height="38">
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="../index.html" class="nav-link">Accueil</a>
+          <a href="../pages/membres-ag.html" class="nav-link">Équipe</a>
+          <a href="#bilan" class="nav-link">Bilan</a>
+          <a href="#temps-forts" class="nav-link">Temps forts</a>
+          <a href="#programme" class="nav-link">Programme</a>
+          <a href="#lieu" class="nav-link">Lieu</a>
+          <a href="#galerie" class="nav-link">Galerie</a>
+          <a href="#edition-2027" class="btn btn-accent nav-menu-cta">Cap sur 2027 <i class="fas fa-arrow-right" aria-hidden="true" style="font-size: 0.8rem;"></i></a>
         </div>
+
+        <div class="nav-actions">
+          <a href="#edition-2027" class="btn btn-accent btn-sm">
+            Cap sur 2027 <i class="fas fa-arrow-right" aria-hidden="true" style="font-size: 0.8rem;"></i>
+          </a>
+          <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-bg">
-            <div class="glow glow-1"></div>
-            <div class="glow glow-2"></div>
+  <!-- Contenu Principal -->
+  <main id="main-content">
+    
+    <!-- Hero Forum Rétrospective -->
+    <section class="forum-hero" id="hero">
+      <div class="container">
+        <div class="reveal">
+          <span class="badge badge-accent">
+            <i class="fas fa-check-circle" aria-hidden="true"></i> Édition Clôturée avec Succès • Rétrospective
+          </span>
+          <h1 class="forum-hero-title">Forum 2026 : Oser pour le <span class="text-elan">changement</span></h1>
+          <p class="forum-hero-subtitle">
+            Le 27 Juin 2026, l'ESCA Casablanca a vibré pour l'entrepreneuriat et l'investissement africain. Retour sur une journée d'audace, de formations intensives et de connexions durables qui a marqué une génération de jeunes acteurs.
+          </p>
         </div>
-        <div class="container hero-content">
-            <div class="badge badge-orange fade-in-up">2ème Édition</div>
-            <h1 class="hero-title fade-in-up delay-1">Oser pour le <span class="accent">changement</span></h1>
-            <p class="hero-subtitle fade-in-up delay-2">Le grand forum de l'entrepreneuriat et de l'investissement.
-                Stimuler l'innovation et la création de valeur chez les jeunes.</p>
 
-            <div class="event-meta fade-in-up delay-3">
-                <div class="meta-item">
-                    <i class="far fa-calendar-alt"></i>
-                    <div>
-                        <span class="meta-label">Date</span>
-                        <span class="meta-value">27 Juin 2026</span>
-                    </div>
-                </div>
-                <div class="meta-item">
-                    <i class="far fa-clock"></i>
-                    <div>
-                        <span class="meta-label">Heure</span>
-                        <span class="meta-value">10h00 - 17h00 (GMT+1)</span>
-                    </div>
-                </div>
-                <div class="meta-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <span class="meta-label">Lieu</span>
-                        <span class="meta-value">ESCA, Casablanca</span>
-                    </div>
-                </div>
-            </div>
+        <!-- Chiffres clés de l'édition -->
+        <dl class="forum-stats reveal reveal-delay-1" aria-label="Bilan chiffré de l'événement">
+          <div class="forum-stat">
+            <dt class="forum-stat-label">Participants</dt>
+            <dd class="forum-stat-value counter-animated" data-target="100" data-suffix="+">100+</dd>
+          </div>
+          <div class="forum-stat">
+            <dt class="forum-stat-label">Projets pitchés</dt>
+            <dd class="forum-stat-value counter-animated" data-target="8">8</dd>
+          </div>
+          <div class="forum-stat">
+            <dt class="forum-stat-label">Masterclasses</dt>
+            <dd class="forum-stat-value counter-animated" data-target="4">4</dd>
+          </div>
+          <div class="forum-stat">
+            <dt class="forum-stat-label">Pays représentés</dt>
+            <dd class="forum-stat-value counter-animated" data-target="7">7</dd>
+          </div>
+        </dl>
 
-            <div class="hero-cta fade-in-up delay-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSffjEo6CpLZPQrxN1Nc00LuAe-3oYAaK39nSExLU6ISub8bSg/viewform"
-                    target="_blank" rel="noopener noreferrer" class="btn btn-orange btn-large">Réserver ma place <i
-                        class="fas fa-arrow-right"></i></a>
-            </div>
+        <div class="reveal reveal-delay-2" style="display: flex; justify-content: center; gap: var(--gt-space-4); flex-wrap: wrap;">
+          <a href="#galerie" class="btn btn-accent btn-lg">
+            Voir la galerie photos <i class="fas fa-camera" aria-hidden="true"></i>
+          </a>
+          <a href="#bilan" class="btn btn-secondary btn-lg">
+            Consulter le compte-rendu <i class="fas fa-file-alt" aria-hidden="true"></i>
+          </a>
         </div>
-    </header>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text slide-in-left">
-                    <h2 class="section-title">Stimuler l'esprit <span class="accent">entrepreneurial</span></h2>
-                    <p>Le Forum s'adresse à une jeunesse passionnée par la création de valeur, composée d'étudiants
-                        porteurs de projets, de jeunes entrepreneurs et de jeunes professionnels en quête de sens.</p>
-                    <p>Notre objectif : vous offrir un cadre propice à l'apprentissage, au réseautage et à l'expression
-                        de votre potentiel à travers une journée riche en opportunités concrètes de financement et de
-                        collaboration.</p>
-
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Partage d'expériences</li>
-                        <li><i class="fas fa-check-circle"></i> Opportunités de financement</li>
-                        <li><i class="fas fa-check-circle"></i> Réseautage qualifié</li>
-                    </ul>
-                </div>
-                <div class="about-visual slide-in-right">
-                    <div class="glass-card main-card">
-                        <i class="fas fa-rocket card-icon"></i>
-                        <h3>7 Heures</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">D'inspiration et d'opportunités</p>
-                    </div>
-                    <div class="glass-card secondary-card card-1 scale-in">
-                        <i class="fas fa-users"></i>
-                        <h4>Experts & Investisseurs</h4>
-                    </div>
-                    <div class="glass-card secondary-card card-2 scale-in delay-1">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Idées Innovantes</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Activities Section -->
-    <section class="section bg-dark" id="activities">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Au cœur du <span class="accent">Forum</span></h2>
-                <p class="section-subtitle">Découvrez les temps forts de cette journée exceptionnelle conçue pour vous
-                    propulser.</p>
+    <!-- Bilan & Synthèse de l'Édition -->
+    <section class="forum-about-section" id="bilan">
+      <div class="container">
+        <div class="forum-about-grid">
+          <div class="reveal">
+            <span class="section-tag">Compte-Rendu Officiel</span>
+            <h2 class="section-title">Une dynamique panafricaine concrétisée</h2>
+            <p>
+              Pour cette 2ème édition, le Forum Growth Together a rassemblé des étudiants, diplômés et jeunes fondateurs venus de plusieurs pays d'Afrique (Maroc, Côte d'Ivoire, Gabon, Guinée, Togo, Burkina Faso, Bénin).
+            </p>
+            <p class="text-muted">
+              L'objectif fixé — <em>briser l'isolement entrepreneurial et donner les outils méthodologiques du passage à l'action</em> — a été pleinement concrétisé à travers 7 heures d'immersion intense rythmées par un grand panel, des masterclasses appliquées et un concours de pitchs d'un très haut niveau d'exigence.
+            </p>
+            <div style="margin-top: var(--gt-space-6);">
+              <a href="#galerie" class="btn btn-secondary">Découvrir les 11 photos de l'événement <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
             </div>
+          </div>
 
-            <div class="scrolly-layout">
-                <!-- Visuals (Sticky) -->
-                <div class="scrolly-visual-container">
-                    <div class="scrolly-icon active" data-step="0"><i class="fas fa-microphone-alt"></i></div>
-                    <div class="scrolly-icon" data-step="1"><i class="fas fa-tools"></i></div>
-                    <div class="scrolly-icon" data-step="2"><i class="fas fa-project-diagram"></i></div>
-                    <div class="scrolly-icon" data-step="3"><i class="fas fa-network-wired"></i></div>
-                </div>
-
-                <!-- Steps (Scroll Naturally) -->
-                <div class="scrolly-steps-container">
-                    <div class="scrolly-step active" data-step="0">
-                        <div class="activity-card">
-                            <h3>Panel d'inspiration</h3>
-                            <p>Des entrepreneurs et investisseurs partagent leurs parcours, réussites et leçons apprises
-                                pour vous aider à surmonter les défis de l'entrepreneuriat.</p>
-                            <span class="speaker-tag">Intervenants à définir</span>
-                        </div>
-                    </div>
-
-                    <div class="scrolly-step" data-step="1">
-                        <div class="activity-card">
-                            <h3>Ateliers pratiques</h3>
-                            <p>Des sessions interactives en petits groupes (Business Model, Pitch, Financement) animées
-                                par des experts pour renforcer vos compétences.</p>
-                        </div>
-                    </div>
-
-                    <div class="scrolly-step" data-step="2">
-                        <div class="activity-card">
-                            <h3>Pitch de projets</h3>
-                            <p>Présentez vos idées devant un jury d'experts. L'occasion idéale de valoriser votre
-                                initiative et d'identifier un soutien potentiel pour votre projet.</p>
-                        </div>
-                    </div>
-
-                    <div class="scrolly-step" data-step="3">
-                        <div class="activity-card">
-                            <h3>Réseautage structuré</h3>
-                            <p>Des connexions utiles et durables facilitées par des dynamiques guidées par les centres
-                                d'intérêt.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <figure class="forum-about-photo reveal reveal-delay-1">
+            <img src="../assets/photos/forum/IMG_0280.webp" alt="Le public attentif dans l'amphithéâtre de l'ESCA pendant le Forum 2026" loading="lazy" width="1600" height="1067">
+            <figcaption class="forum-about-badge">
+              <span class="forum-about-badge-value">7 heures</span>
+              <span class="forum-about-badge-text">d'immersion : grand panel, masterclasses et concours de pitchs devant un jury de mentors et de dirigeants.</span>
+            </figcaption>
+          </figure>
         </div>
+      </div>
     </section>
 
-    <!-- Schedule Section -->
-    <section class="section schedule" id="schedule">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Le <span class="accent">Chronogramme</span></h2>
-                <p class="section-subtitle">Votre journée du 27 Juin 2026</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">10h00 - 10h30</div>
-                    <div class="timeline-content">
-                        <h4>Accueil et enregistrement</h4>
-                        <p>Distribution des badges et installation.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">10h30 - 11h00</div>
-                    <div class="timeline-content">
-                        <h4>Cérémonie d'ouverture</h4>
-                        <p>Présentation de Growth Together et mot de bienvenue.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">11h00 - 12h30</div>
-                    <div class="timeline-content">
-                        <h4>Panel d'inspiration</h4>
-                        <p>Échanges dynamiques avec nos invités d'honneur.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">12h30 - 13h00</div>
-                    <div class="timeline-content">
-                        <h4>Pause-café et réseautage</h4>
-                        <p>Premiers contacts et échanges informels.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">13h00 - 14h30</div>
-                    <div class="timeline-content">
-                        <h4>Pitch de projets</h4>
-                        <p>Les candidats présentent leurs innovations devant le jury.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">14h30 - 16h15</div>
-                    <div class="timeline-content">
-                        <h4>Ateliers pratiques (Workshops)</h4>
-                        <p>Sessions de formation aux compétences techniques et stratégiques.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">16h15 - 16h55</div>
-                    <div class="timeline-content">
-                        <h4>Délibération & Photos Officielles</h4>
-                        <p>Clôture du réseautage et photos souvenirs.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">16h55 - 17h00</div>
-                    <div class="timeline-content">
-                        <h4>Mot de la fin</h4>
-                        <p>Clôture du forum et départ.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- 4 Temps Forts de l'Édition -->
+    <section class="forum-highlights-section" id="temps-forts">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Récit de l'Événement</span>
+          <h2 class="section-title">Les 4 temps forts de la journée</h2>
+          <p class="section-subtitle text-center">
+            Retour sur les moments clés qui ont rythmé le forum du matin au soir.
+          </p>
         </div>
+
+        <div class="highlights-grid">
+          <article class="gt-card highlight-card reveal">
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fas fa-microphone-alt"></i>
+            </div>
+            <h3>1. Le Grand Panel</h3>
+            <p>Des entrepreneurs africains aguerris ont partagé avec authenticité leurs parcours, leurs échecs formateurs et les clés de la pérennité.</p>
+          </article>
+
+          <article class="gt-card highlight-card reveal reveal-delay-1">
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>2. Les Ateliers Pratiques</h3>
+            <p>Travaux en sous-groupes animés par des spécialistes pour challenger la proposition de valeur et affiner le plan financier.</p>
+          </article>
+
+          <article class="gt-card highlight-card reveal reveal-delay-2">
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>3. La Session Pitch</h3>
+            <p>8 finalistes ont présenté leurs projets devant un jury bienveillant mais rigoureux, bénéficiant de retours d'experts en direct.</p>
+          </article>
+
+          <article class="gt-card highlight-card reveal reveal-delay-3">
+            <div class="highlight-icon" aria-hidden="true">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3>4. Réseautage & Clôture</h3>
+            <p>Des connexions d'affaires solides nouées lors des pauses-cafés et la photo souvenir officielle réunissant toute la communauté.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Location Section -->
-    <section class="section bg-darker" id="location">
-        <div class="container text-center fade-in-up">
-            <h2 class="section-title">Lieu de <span class="accent">l'événement</span></h2>
-            <p class="section-subtitle">Rejoignez-nous à l'ESCA École de Management, Casablanca.</p>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7745772635904!2d-7.634123523497262!3d33.58521744224095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d296cd8cb487%3A0xcbaecfc38d977da0!2sESCA%20Ecole%20de%20Management!5e0!3m2!1sfr!2sma!4v1714000000000!5m2!1sfr!2sma"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    <!-- Chronogramme / Rétrospective de la Journée -->
+    <section class="timeline-section" id="programme">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Fil Conducteur</span>
+          <h2 class="section-title">Comment s'est déroulée la journée</h2>
+          <p class="section-subtitle text-center">
+            Samedi 27 Juin 2026 — ESCA École de Management, Casablanca
+          </p>
         </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">10h00 – 10h30</span>
+            <div class="timeline-title">Accueil & Émargement</div>
+            <p class="timeline-desc">Arrivée des délégations d'étudiants, remise des dossiers d'ateliers et installation dans l'amphithéâtre.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">10h30 – 11h00</span>
+            <div class="timeline-title">Cérémonie d'Ouverture</div>
+            <p class="timeline-desc">Discours d'introduction par les cofondateurs de Growth Together et rappel de la mission <em>Ground. Grow. Widen.™</em>.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">11h00 – 12h30</span>
+            <div class="timeline-title">Grand Panel d'Inspiration</div>
+            <p class="timeline-desc">Débat interactif entre intervenants d'honneur et les participants sur la posture entrepreneuriale.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">12h30 – 13h00</span>
+            <div class="timeline-title">Pause-Café & Réseautage Initial</div>
+            <p class="timeline-desc">Premiers échanges informels, rencontre des mentors et partage d'idées.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">13h00 – 14h30</span>
+            <div class="timeline-title">Concours de Pitch de Projets</div>
+            <p class="timeline-desc">Prestations remarquées des 8 porteurs de projets devant le jury réuni à l'ESCA.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">14h30 – 16h15</span>
+            <div class="timeline-title">Ateliers Pratiques (Workshops)</div>
+            <p class="timeline-desc">Sessions de travail intensif en petits groupes réparties dans les salles de cours de l'école.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">16h15 – 16h55</span>
+            <div class="timeline-title">Délibération & Photos Officielles</div>
+            <p class="timeline-desc">Annonce des résultats, remise des distinctions et séance photo officielle de la promotion 2026.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-time">16h55 – 17h00</span>
+            <div class="timeline-title">Clôture & Remerciements</div>
+            <p class="timeline-desc">Mot de conclusion inspirant et engagement pris pour la 3ème édition en 2027.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Photo Gallery Section -->
-    <section class="section" id="galerie">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Retour en <span class="accent">Images</span></h2>
-                <p class="section-subtitle">Revivez les moments forts de la 1ère édition du Forum Growth Together, tenue
-                    à l'ESCA Casablanca.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item fade-in-up" data-index="0">
-                    <img src="../assets/photos/forum/IMG_0652.jpg"
-                        alt="Photo de groupe – Tous les participants du Forum Growth Together" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-1" data-index="1">
-                    <img src="../assets/photos/forum/IMG_0234.jpg" alt="Intervention d'une experte au pupitre ESCA"
-                        loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-2" data-index="2">
-                    <img src="../assets/photos/forum/IMG_0280.jpg"
-                        alt="Les participants du forum suivant une conférence" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up" data-index="3">
-                    <img src="../assets/photos/forum/IMG_0385.jpg" alt="Échanges entre intervenants lors du panel"
-                        loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-1" data-index="4">
-                    <img src="../assets/photos/forum/IMG_0203.jpg" alt="Réseautage – Participant lors de la pause-café"
-                        loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-2" data-index="5">
-                    <img src="../assets/photos/forum/IMG_0223.jpg"
-                        alt="Session de questions-réponses avec les panélistes" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up" data-index="6">
-                    <img src="../assets/photos/forum/IMG_0259.jpg"
-                        alt="Vue d'ensemble de l'amphithéâtre ESCA pendant le forum" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-1" data-index="7">
-                    <img src="../assets/photos/forum/IMG_0447.jpg" alt="Atelier pratique avec les participants"
-                        loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-2" data-index="8">
-                    <img src="../assets/photos/forum/IMG_0464.jpg"
-                        alt="Moment de partage entre les jeunes entrepreneurs" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up" data-index="9">
-                    <img src="../assets/photos/forum/IMG_0471.jpg" alt="Photo souvenir avec les intervenants"
-                        loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item fade-in-up delay-1" data-index="10">
-                    <img src="../assets/photos/forum/IMG_0639.jpg" alt="Cérémonie de clôture du Forum" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-            </div>
+    <!-- Lieu de l'événement -->
+    <section class="venue-section" id="lieu">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Lieu de l'événement</span>
+          <h2 class="section-title">ESCA École de Management, Casablanca</h2>
+          <p class="section-subtitle text-center">
+            L'école nous a ouvert son amphithéâtre et ses salles de cours pour une journée complète d'échanges et d'ateliers.
+          </p>
         </div>
+
+        <div class="venue-grid reveal reveal-delay-1">
+          <div class="gt-card venue-card">
+            <div class="venue-info">
+              <div class="event-meta-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <span class="event-meta-label">Adresse</span>
+                <span class="venue-value">ESCA École de Management<br>Casablanca, Maroc</span>
+              </div>
+            </div>
+            <div class="venue-info">
+              <div class="event-meta-icon" aria-hidden="true"><i class="far fa-calendar-check"></i></div>
+              <div>
+                <span class="event-meta-label">Date</span>
+                <span class="venue-value">Samedi 27 juin 2026</span>
+              </div>
+            </div>
+            <div class="venue-info">
+              <div class="event-meta-icon" aria-hidden="true"><i class="far fa-clock"></i></div>
+              <div>
+                <span class="event-meta-label">Horaires</span>
+                <span class="venue-value">10h00 – 17h00</span>
+              </div>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=ESCA+Ecole+de+Management+Casablanca" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              Ouvrir dans Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="map-wrapper venue-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7745772635904!2d-7.634123523497262!3d33.58521744224095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d296cd8cb487%3A0xcbaecfc38d977da0!2sESCA%20Ecole%20de%20Management!5e0!3m2!1sfr!2sma!4v1714000000000!5m2!1sfr!2sma"
+              title="Localisation de l'ESCA École de Management à Casablanca"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightbox-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
-        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Précédente"><i
-                class="fas fa-chevron-left"></i></button>
-        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Suivante"><i
-                class="fas fa-chevron-right"></i></button>
-        <div class="lightbox-content">
-            <img src="" alt="" id="lightbox-img">
-            <p class="lightbox-caption" id="lightbox-caption"></p>
+    <!-- Galerie Photos de la 1ère & 2ème Édition -->
+    <section class="gallery-section" id="galerie">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Album Souvenir</span>
+          <h2 class="section-title">L'Album Photo Officiel</h2>
+          <p class="section-subtitle text-center">
+            Cliquez sur un cliché pour l'agrandir en plein écran (navigation par flèches clavier ou balayage tactile).
+          </p>
         </div>
-        <div class="lightbox-counter" id="lightbox-counter"></div>
+
+        <div class="gallery-grid" aria-label="Galerie photographique">
+          <div class="gallery-item gallery-item--featured reveal">
+            <img src="../assets/photos/forum/IMG_0652.webp" alt="Photo d'ensemble de tous les participants réunis à l'ESCA Casablanca" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-1">
+            <img src="../assets/photos/forum/IMG_0234.webp" alt="Intervention d'une experte invitée au pupitre" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-2">
+            <img src="../assets/photos/forum/IMG_0280.webp" alt="L'audience attentive durant les sessions plénières" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="../assets/photos/forum/IMG_0385.webp" alt="Échanges stimulants entre panélistes durant la table ronde" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-1">
+            <img src="../assets/photos/forum/IMG_0203.webp" alt="Moments de convivialité et réseautage lors de la pause" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-2">
+            <img src="../assets/photos/forum/IMG_0223.webp" alt="Session interactive de questions-réponses avec la salle" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="../assets/photos/forum/IMG_0259.webp" alt="Vue d'ensemble de l'amphithéâtre comble de l'ESCA" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-1">
+            <img src="../assets/photos/forum/IMG_0447.webp" alt="Atelier pratique en sous-groupe : réflexion sur les business models" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-2">
+            <img src="../assets/photos/forum/IMG_0464.webp" alt="Partage d'expériences entre jeunes porteurs d'idées" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="../assets/photos/forum/IMG_0471.webp" alt="Photo souvenir avec les intervenants et membres de l'organisation" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="gallery-item reveal reveal-delay-1">
+            <img src="../assets/photos/forum/IMG_0639.webp" alt="Cérémonie de clôture et célébration des talents africains" loading="lazy">
+            <div class="gallery-overlay" aria-hidden="true"><i class="fas fa-search-plus"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Lightbox Accessible -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aperçu d'image" aria-hidden="true">
+      <button class="lightbox-btn lightbox-close" id="lightbox-close" type="button" aria-label="Fermer la vue agrandie">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-btn lightbox-prev" id="lightbox-prev" type="button" aria-label="Image précédente">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-btn lightbox-next" id="lightbox-next" type="button" aria-label="Image suivante">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="lightbox-content">
+        <img alt="" class="lightbox-img" id="lightbox-img">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+      </div>
     </div>
 
-    <!-- CTA / Register Section -->
-    <section class="cta-section" id="register">
-        <div class="container text-center fade-in-up">
-            <h2>Prêt à façonner <span class="accent-orange">l'avenir</span> ?</h2>
-            <p>Ne manquez pas l'événement incontournable de l'année pour les jeunes entrepreneurs.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSffjEo6CpLZPQrxN1Nc00LuAe-3oYAaK39nSExLU6ISub8bSg/viewform"
-                target="_blank" rel="noopener noreferrer" class="btn btn-orange btn-large mt-4">Je réserve ma place <i
-                    class="fas fa-ticket-alt"></i></a>
+    <!-- Section Cap sur 2027 -->
+    <section class="register-cta-section" id="edition-2027">
+      <div class="container reveal">
+        <span class="badge badge-accent" style="margin-bottom: var(--gt-space-3);">Perspectives d'Avenir</span>
+        <h2>Cap sur la 3ème Édition — Forum 2027</h2>
+        <p>
+          Vous souhaitez intervenir comme mentor, soutenir financièrement l'initiative ou proposer votre projet pour la prochaine édition ?
+        </p>
+        <div style="margin-top: var(--gt-space-6);">
+          <a href="../index.html#contact" class="btn btn-accent btn-lg">
+            Rejoindre la dynamique 2027 <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="../assets/logo.png" alt="Growth Together" class="footer-logo">
-                <p>Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Liens Rapides</h3>
-                <ul>
-                    <li><a href="../index.html">Site Principal</a></li>
-                    <li><a href="../pages/membres-ag.html">Équipe</a></li>
-                    <li><a href="#about">À Propos du Forum</a></li>
-                    <li><a href="#activities">Activités</a></li>
-                    <li><a href="#schedule">Programme</a></li>
-                    <li><a href="../pages/mentions-legales.html">Mentions Légales</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> agrowthtogether@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +212 0612843918</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/agrowthtogether/" target="_blank"
-                        rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/growth_together.a?igsh=MTdxMjJ1Mjh3dGt5Yg==" target="_blank"
-                        rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1Bh3CekVWM/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                </div>
-                <p class="mt-2 tag">#agrowthtogether</p>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2026 Growth Together. Tous droits réservés. | <a href="../pages/mentions-legales.html">Mentions
-                    Légales</a></p>
-        </div>
-    </footer>
+  </main>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-        <i class="fas fa-sun"></i>
-        <i class="fas fa-moon"></i>
-    </button>
+  <!-- Footer Institutionnel Nuit Profonde (#091116) -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- 1. Marque -->
+      <div class="footer-brand">
+        <img src="../assets/logo.png" alt="Growth Together" class="footer-logo" width="48" height="48">
+        <div class="footer-baseline">Ground. Grow. Widen.™</div>
+        <p class="footer-quote">
+          « Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation. »
+        </p>
+      </div>
 
-    <!-- Scripts: Shared + Forum-specific -->
-    <script src="../js/main.js"></script>
-    <script src="js/forum.js"></script>
+      <!-- 2. Démarche -->
+      <div class="footer-column">
+        <h3>Site Principal</h3>
+        <ul class="footer-links">
+          <li><a href="../index.html" class="footer-link">Accueil</a></li>
+          <li><a href="../index.html#piliers" class="footer-link">Les 3 Piliers</a></li>
+          <li><a href="../index.html#mission" class="footer-link">Notre Mission</a></li>
+          <li><a href="../pages/membres-ag.html" class="footer-link">Conseil & Équipe</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Forum -->
+      <div class="footer-column">
+        <h3>Forum GT</h3>
+        <ul class="footer-links">
+          <li><a href="#bilan" class="footer-link">Bilan de l'édition</a></li>
+          <li><a href="#temps-forts" class="footer-link">Temps forts</a></li>
+          <li><a href="#programme" class="footer-link">Programme</a></li>
+          <li><a href="#lieu" class="footer-link">Lieu de l'événement</a></li>
+          <li><a href="#galerie" class="footer-link">Galerie photos</a></li>
+          <li><a href="#edition-2027" class="footer-link">Édition 2027</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:agrowthtogether@gmail.com" class="footer-link">agrowthtogether@gmail.com</a></li>
+          <li><a href="tel:+2120612843918" class="footer-link">+212 0612843918</a></li>
+          <li><span class="footer-link">Casablanca, Maroc</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mention légale basse -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Growth Together (GT). Association à but non lucratif. Tous droits réservés.</p>
+        <p><a href="../pages/mentions-legales.html">Mentions Légales & Confidentialité</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Commutateur de Thème Accessible -->
+  <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Basculer le mode d'affichage" title="Changer de thème">
+    <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+    <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="js/forum.js"></script>
 </body>
-
 </html>

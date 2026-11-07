@@ -1,480 +1,639 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Growth Together | Éveillés pour réveiller une génération</title>
-    <meta name="description"
-        content="Growth Together – Association à but non lucratif dédiée à l'éveil et l'accompagnement de la jeunesse africaine vers l'entrepreneuriat, l'excellence et la transformation personnelle.">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta charset="UTF-8">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');var t='dark';try{var s=localStorage.getItem('gt-theme');if(s==='light'||s==='dark')t=s;}catch(e){}d.setAttribute('data-theme',t);})();</script>
+  <meta name="color-scheme" content="dark light">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Together (GT) | Ground. Grow. Widen.</title>
+  <meta name="description" content="Growth Together – Association à but non lucratif dédiée à l'éveil et l'accompagnement de la jeunesse africaine vers l'entrepreneuriat, l'excellence et la transformation personnelle.">
+  <!-- Aperçu des liens partagés (WhatsApp, LinkedIn, Facebook…).
+       Une fois le domaine connu, remplacer og:image par une URL absolue (https://…/assets/og-image.jpg). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Growth Together">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Growth Together (GT) | Ground. Grow. Widen.">
+  <meta property="og:description" content="Growth Together – Association à but non lucratif dédiée à l'éveil et l'accompagnement de la jeunesse africaine vers l'entrepreneuriat, l'excellence et la transformation personnelle.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
+  <!-- Polices Officielles du Design System : Satoshi & Open Sans -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Icônes Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('gt-theme') || 'dark');</script>
+  <!-- Stylesheets -->
+  <link rel="preload" as="image" href="assets/photos/forum/hero-forum-2400.webp" imagesrcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w" imagesizes="100vw">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Prévention du FOUC de thème -->
+  <script>
+    const savedTheme = localStorage.getItem('gt-theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
 </head>
 
-<body>
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-container nav-content">
-            <a href="index.html" class="logo-link">
-                <img src="assets/logo.png" alt="Growth Together Logo" class="logo">
-                <span class="logo-text">Growth Together</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#about">À Propos</a></li>
-                <li><a href="#objectifs">Objectifs</a></li>
-                <li><a href="#activites">Activités</a></li>
-                <li><a href="pages/membres-ag.html">Équipe</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="forum/index.html" class="btn btn-outline" id="nav-cta">Forum 2026 <i
-                    class="fas fa-arrow-right"></i></a>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+<body class="has-photo-hero">
+  <!-- Lien d'évitement accessibilité (WCAG 2.1 AA) -->
+  <a href="#main-content" class="sr-only-focusable">Aller au contenu principal</a>
+
+  <!-- Barre de Navigation Supérieure -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Navigation principale">
+      <div class="container nav-container">
+        <a href="index.html" class="nav-brand" aria-label="Accueil Growth Together">
+          <img src="assets/Fichier 239gt logo.svg" alt="Growth Together" class="nav-logo-svg" height="38">
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="#piliers" class="nav-link">Piliers</a>
+          <a href="#mission" class="nav-link">Mission</a>
+          <a href="#objectifs" class="nav-link">Objectifs</a>
+          <a href="#actions" class="nav-link">Actions</a>
+          <a href="pages/membres-ag.html" class="nav-link">Équipe</a>
+          <a href="forum/index.html" class="nav-link">Forum 2026</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#contact" class="btn btn-primary nav-menu-cta">Rejoindre GT</a>
         </div>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-primary btn-sm">Rejoindre GT</a>
+          <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="nav-menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-bg-image"></div>
-            <div class="hero-bg-overlay"></div>
-            <div class="hero-bg-accent"></div>
-        </div>
-        <div class="container hero-content">
-            <div class="badge fade-in-up">Association à but non lucratif</div>
-            <h1 class="hero-title fade-in-up delay-1">Éveillés pour <span class="accent">réveiller</span> une génération
-            </h1>
-            <p class="hero-subtitle fade-in-up delay-2">Nous accompagnons la jeunesse africaine vers l'entrepreneuriat,
-                l'excellence et la transformation personnelle. Ensemble, bâtissons un avenir où chaque jeune est acteur
-                de son propre changement.</p>
+  <!-- Contenu Principal -->
+  <main id="main-content">
+    
+    <!-- 1. Hero Section (Ground. Grow. Widen.) -->
+    <section class="hero-section hero-full" id="hero">
+      <!-- Photo de groupe du Forum 2026, en fond plein écran -->
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/photos/forum/hero-forum-2400.webp"
+             srcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w"
+             sizes="100vw" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
+      </div>
 
-            <div class="hero-cta fade-in-up delay-3">
-                <a href="#about" class="btn btn-primary btn-large">Découvrir GT <i class="fas fa-chevron-down"></i></a>
-                <a href="forum/index.html" class="btn btn-white btn-large">Forum 2026 <i
-                        class="fas fa-arrow-right"></i></a>
-            </div>
+      <div class="container hero-full-inner">
+        <div class="hero-content reveal">
+          <span class="hero-pill">Ground. Grow. Widen.™</span>
+          <h1 class="hero-title">Grandir seul est possible, <span class="hero-title-accent">grandir ensemble</span> est durable.</h1>
+          <p class="hero-description">
+            Growth Together accompagne la jeunesse africaine vers l'entrepreneuriat, le leadership et l'émancipation personnelle. Ensemble, bâtissons un continent où chaque jeune est acteur de son propre changement.
+          </p>
+          <div class="hero-actions">
+            <a href="#piliers" class="btn btn-primary btn-lg">Découvrir la démarche <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            <a href="forum/index.html" class="btn btn-accent btn-lg">Forum 2026 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
         </div>
-        <div class="scroll-indicator fade-in-up delay-4">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </header>
+      </div>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item fade-in-up">
-                    <div class="stat-number">2024</div>
-                    <div class="stat-label">Année de création</div>
-                </div>
-                <div class="stat-item fade-in-up delay-1">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Participants au Forum</div>
-                </div>
-                <div class="stat-item fade-in-up delay-2">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Piliers d'action</div>
-                </div>
-                <div class="stat-item fade-in-up delay-3">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Ambition panafricaine</div>
-                </div>
-            </div>
-        </div>
+      <a href="#piliers" class="hero-scroll" aria-label="Défiler vers la suite de la page">
+        <span>Défiler</span>
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
     </section>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text slide-in-left">
-                    <h2 class="section-title">Notre <span class="accent">Mission</span></h2>
-                    <div class="section-divider" style="margin: 1rem 0 2rem 0;"></div>
-                    <p>Growth Together est une association à but non lucratif fondée en octobre 2024, née d'une
-                        conviction profonde : chaque jeune africain porte en lui le potentiel de transformer sa propre
-                        vie et celle de sa communauté.</p>
-                    <p>Areligieuse, apolitique et non syndicale, GT a pour mission de pousser une jeunesse africaine à
-                        se déployer dans sa potentialité, en lui offrant les outils, le réseau et l'accompagnement
-                        nécessaires pour entreprendre et exceller.</p>
-
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Accompagnement entrepreneurial</li>
-                        <li><i class="fas fa-check-circle"></i> Développement personnel & leadership</li>
-                        <li><i class="fas fa-check-circle"></i> Réseau panafricain de jeunes acteurs</li>
-                    </ul>
-                </div>
-                <div class="about-visual slide-in-right">
-                    <img src="assets/photos/forum/IMG_0652.jpg"
-                        alt="Participants du Forum Growth Together réunis à l'ESCA Casablanca" loading="lazy">
-                    <div class="about-visual-overlay"></div>
-                    <div class="about-visual-border"></div>
-                </div>
-            </div>
-
-            <!-- Vision Block -->
-            <div class="vision-block fade-in-up">
-                <div class="vision-label"><i class="fas fa-eye"></i> Notre Vision</div>
-                <p class="vision-text">
-                    « Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation »
-                </p>
-            </div>
+    <!-- 2. Framework des 3 Piliers (Ground, Grow, Widen) -->
+    <section class="pillars-section" id="piliers">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Notre Philosophie d'Action</span>
+          <h2 class="section-title">Le triptyque de transformation : <span class="text-elan">Ground. Grow. Widen.</span></h2>
+          <p class="section-subtitle text-center">
+            Chaque action de notre association s'inscrit dans cette démarche en trois temps, garante d'un développement personnel et entrepreneurial durable.
+          </p>
         </div>
+
+        <div class="pillars-grid">
+          <!-- Pilier 1 : Ground -->
+          <article class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-header">
+              <span class="badge badge-pillar">Étape 01</span>
+              <span class="pillar-step">01</span>
+            </div>
+            <h3 class="pillar-name">Ground — Ancrer</h3>
+            <p class="pillar-principle">Toute progression commence par un point de départ assumé sans jugement.</p>
+            <p class="text-muted" style="font-size: var(--gt-text-sm);">
+              Identifier son potentiel brut, surmonter l'inhibition et poser des bases saines. Il n'y a pas d'ambition durable sans lucidité et acceptation de soi.
+            </p>
+            <blockquote class="pillar-quote">
+              « Il n’y a pas de honte à commencer, seulement du courage. »
+            </blockquote>
+          </article>
+
+          <!-- Pilier 2 : Grow -->
+          <article class="pillar-card reveal reveal-delay-2">
+            <div class="pillar-header">
+              <span class="badge badge-pillar">Étape 02</span>
+              <span class="pillar-step">02</span>
+            </div>
+            <h3 class="pillar-name">Grow — Grandir</h3>
+            <p class="pillar-principle">Le mouvement régulier crée la transformation durable.</p>
+            <p class="text-muted" style="font-size: var(--gt-text-sm);">
+              Acquérir des outils concrets, cultiver la rigueur, tester ses projets et apprendre avec constance. Chaque petit pas régulier forge l'excellence.
+            </p>
+            <blockquote class="pillar-quote">
+              « Chaque petit pas compte plus que le résultat final. »
+            </blockquote>
+          </article>
+
+          <!-- Pilier 3 : Widen -->
+          <article class="pillar-card reveal reveal-delay-3">
+            <div class="pillar-header">
+              <span class="badge badge-accent">Étape 03</span>
+              <span class="pillar-step">03</span>
+            </div>
+            <h3 class="pillar-name">Widen — Rayonner</h3>
+            <p class="pillar-principle">On ne grandit jamais seul ; la réussite individuelle devient levier collectif.</p>
+            <p class="text-muted" style="font-size: var(--gt-text-sm);">
+              Partager son expérience, créer des opportunités, inspirer son entourage et bâtir des ponts panafricains durables pour les générations suivantes.
+            </p>
+            <blockquote class="pillar-quote">
+              « Ta progression inspire celle de quelqu’un d’autre. »
+            </blockquote>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Objectifs Section -->
-    <section class="section bg-dark" id="objectifs">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Nos <span class="accent">Objectifs</span></h2>
-                <p class="section-subtitle">Six piliers fondamentaux qui guident chacune de nos actions et initiatives.
-                </p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="objectives-grid">
-                <div class="glass-card objective-card scale-in">
-                    <span class="obj-number">01</span>
-                    <div class="icon-circle"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Information & Accès</h3>
-                    <p>Être un canal d'information sur les opportunités et les bourses pour ceux à qui elles ne sont pas
-                        toujours accessibles.</p>
-                </div>
-
-                <div class="glass-card objective-card scale-in delay-1">
-                    <span class="obj-number">02</span>
-                    <div class="icon-circle"><i class="fas fa-award"></i></div>
-                    <h3>Excellence & Initiative</h3>
-                    <p>Encourager l'excellence, la prise d'initiative et l'entrepreneuriat au sein de la jeunesse
-                        africaine.</p>
-                </div>
-
-                <div class="glass-card objective-card scale-in delay-2">
-                    <span class="obj-number">03</span>
-                    <div class="icon-circle"><i class="fas fa-cogs"></i></div>
-                    <h3>Compétences</h3>
-                    <p>Aider au développement des compétences clés : communication, leadership, réseautage et langues.
-                    </p>
-                </div>
-
-                <div class="glass-card objective-card scale-in">
-                    <span class="obj-number">04</span>
-                    <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Apprentissage</h3>
-                    <p>Former sur les techniques d'apprentissage efficaces pour les élèves et étudiants.</p>
-                </div>
-
-                <div class="glass-card objective-card scale-in delay-1">
-                    <span class="obj-number">05</span>
-                    <div class="icon-circle"><i class="fas fa-brain"></i></div>
-                    <h3>Développement Personnel</h3>
-                    <p>Travailler sur la confiance en soi, la prise de parole en public, l'autodiscipline et la
-                        découverte des talents.</p>
-                </div>
-
-                <div class="glass-card objective-card scale-in delay-2">
-                    <span class="obj-number">06</span>
-                    <div class="icon-circle"><i class="fas fa-heart"></i></div>
-                    <h3>Bien-être & Prévention</h3>
-                    <p>Lutter contre la dépression et promouvoir le bien-être mental chez les jeunes.</p>
-                </div>
-            </div>
+    <!-- 3. Chiffres Clés / Impact (avec Compteurs Animés) -->
+    <section class="stats-section" aria-label="Chiffres clés et impact">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number counter-animated" data-target="2024">2024</div>
+            <div class="stat-label">Année de création</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-1">
+            <div class="stat-number counter-animated" data-target="100" data-suffix="+">100+</div>
+            <div class="stat-label">Participants mobilisés</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-2">
+            <div class="stat-number counter-animated" data-target="6">6</div>
+            <div class="stat-label">Objectifs stratégiques</div>
+          </div>
+          <div class="stat-item reveal reveal-delay-3">
+            <div class="stat-number counter-animated" data-target="8" data-suffix="+">8+</div>
+            <div class="stat-label">Pays représentés</div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Activités Section -->
-    <section class="section" id="activites">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Nos <span class="accent-blue">Activités</span></h2>
-                <p class="section-subtitle">Des initiatives concrètes pour accompagner la jeunesse africaine dans son
-                    développement.</p>
-                <div class="section-divider"></div>
-            </div>
+    <!-- 4. Notre Mission & Vision -->
+    <section class="mission-section" id="mission">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-text reveal">
+            <span class="section-tag">Notre Mission</span>
+            <h2 class="section-title">Éveiller et déployer le potentiel de la <span class="text-elan">jeunesse africaine</span></h2>
+            <p>
+              Fondée en octobre 2024 à Casablanca, <strong>Growth Together (GT)</strong> est une association à but non lucratif régie par la législation marocaine. Areligieuse, apolitique et non syndicale, notre organisation est née d'une certitude partagée : chaque jeune africain porte en lui la capacité de transformer sa vie et son environnement.
+            </p>
+            <p>
+              Nous mettons à sa disposition les outils méthodologiques, un réseau bienveillant et un accompagnement rigoureux pour lui permettre d'entreprendre, de se former et d'exceller.
+            </p>
+          </div>
 
-            <div class="activities-row">
-                <div class="glass-card activity-item scale-in">
-                    <div class="icon-circle"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <div class="activity-text">
-                        <h3>Formations</h3>
-                        <p>Ateliers pratiques et sessions de formation pour renforcer les compétences professionnelles
-                            et personnelles.</p>
-                    </div>
-                </div>
-
-                <div class="glass-card activity-item scale-in delay-1">
-                    <div class="icon-circle"><i class="fas fa-comments"></i></div>
-                    <div class="activity-text">
-                        <h3>Forums</h3>
-                        <p>Événements majeurs réunissant entrepreneurs, investisseurs et jeunes porteurs de projets
-                            innovants.</p>
-                    </div>
-                </div>
-
-                <div class="glass-card activity-item scale-in delay-2">
-                    <div class="icon-circle"><i class="fas fa-laptop"></i></div>
-                    <div class="activity-text">
-                        <h3>Webinaires</h3>
-                        <p>Sessions en ligne accessibles à tous pour démocratiser l'accès à l'information et aux
-                            opportunités.</p>
-                    </div>
-                </div>
-
-                <div class="glass-card activity-item scale-in delay-3">
-                    <div class="icon-circle"><i class="fas fa-share-alt"></i></div>
-                    <div class="activity-text">
-                        <h3>Réseautage</h3>
-                        <p>Mise en relation avec des professionnels, mentors et partenaires à travers l'Afrique et
-                            au-delà.</p>
-                    </div>
-                </div>
-            </div>
+          <div class="mission-visual reveal reveal-delay-2">
+            <img src="assets/photos/forum/IMG_0259.webp"
+                 alt="Une jeune intervenante prend la parole au pupitre lors du Forum Growth Together à l'ESCA Casablanca"
+                 loading="lazy" width="600" height="380" style="object-position: 60% 30%;">
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ========== DIRECTION & COFONDATEURS ========== -->
-    <section class="section bg-dark" id="direction">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Direction & <span class="accent">Cofondateurs</span></h2>
-                <p class="section-subtitle">Les visionnaires qui ont fondé et dirigent Growth Together.</p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="fondateurs-list">
-
-                <!-- Joseph Brou Kouame -->
-                <div class="glass-card fondateur-card slide-in-left" id="membre-joseph">
-                    <div class="fondateur-text">
-                        <span class="fondateur-badge"><i class="fas fa-crown"></i> Cofondateur</span>
-                        <h3>Joseph Brou Kouame</h3>
-                        <span class="fondateur-role">Président du Conseil Administratif</span>
-                        <p>Visionnaire et cofondateur de Growth Together, il préside le Conseil Administratif et impulse
-                            la direction stratégique de l'association.</p>
-                    </div>
-                    <div class="fondateur-photo">
-                        <img src="assets/photos/equipe/Joseph_BROU KOUAME.jpeg" alt="Joseph Brou Kouame"
-                            loading="lazy">
-                        <div class="fondateur-photo-border"></div>
-                    </div>
-                </div>
-
-                <!-- Marie France KRA -->
-                <div class="glass-card fondateur-card fondateur-card--reversed slide-in-right" id="membre-marie">
-                    <div class="fondateur-text">
-                        <span class="fondateur-badge"><i class="fas fa-crown"></i> Cofondatrice</span>
-                        <h3>Marie France KRA</h3>
-                        <span class="fondateur-role">Vice-Présidente & Directrice du Conseil de Contrôle</span>
-                        <p>Cofondatrice et Directrice du Conseil de Contrôle, elle veille à la bonne gouvernance et au
-                            respect de la mission de GT.</p>
-                    </div>
-                    <div class="fondateur-photo">
-                        <img src="assets/photos/equipe/Marie-France_KRA.jpeg" alt="Marie France KRA" loading="lazy">
-                        <div class="fondateur-photo-border"></div>
-                    </div>
-                </div>
-
-                <!-- Benjamin ISTEFANAS -->
-                <div class="glass-card fondateur-card slide-in-left" id="membre-benjamin">
-                    <div class="fondateur-text">
-                        <span class="fondateur-badge"><i class="fas fa-crown"></i> Cofondateur</span>
-                        <h3>Benjamin ISTEFANAS</h3>
-                        <span class="fondateur-role">Directeur du Conseil Exécutif</span>
-                        <p>Cofondateur et à la tête du Conseil Exécutif, il pilote la gestion opérationnelle et
-                            stratégique de Growth Together.</p>
-                    </div>
-                    <div class="fondateur-photo">
-                        <img src="assets/photos/equipe/Benjamin_ISTEFANAS.jpeg" alt="Benjamin ISTEFANAS"
-                            loading="lazy">
-                        <div class="fondateur-photo-border"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Link to Full Team Page -->
-            <div class="text-center mt-4 fade-in-up" style="margin-top: 3rem;">
-                <a href="pages/membres-ag.html" class="btn btn-outline">Découvrir toute l'équipe <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
+    <!-- 4 bis. Notre Vision : bandeau pleine largeur -->
+    <section class="vision-band" id="vision" aria-labelledby="vision-title">
+      <img class="vision-band-bg" src="assets/photos/forum/IMG_0280.webp" alt="" aria-hidden="true" loading="lazy">
+      <div class="container vision-band-inner reveal">
+        <h2 class="vision-band-label" id="vision-title">Notre vision</h2>
+        <blockquote class="vision-band-quote">
+          <p>« Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation. »</p>
+        </blockquote>
+      </div>
     </section>
 
-    <!-- Forum Highlight Banner -->
-    <section class="forum-banner" id="forum">
-        <div class="forum-banner-bg">
-            <img src="assets/photos/forum/IMG_0259.jpg" alt="Audience du Forum Growth Together" loading="lazy">
-            <div class="forum-banner-bg-overlay"></div>
+    <!-- 5. Nos 6 Objectifs Stratégiques -->
+    <section class="objectives-section" id="objectifs">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Engagements Concrets</span>
+          <h2 class="section-title">Nos 6 objectifs fondamentaux</h2>
+          <p class="section-subtitle text-center">
+            Une feuille de route pragmatique qui structure l'ensemble de nos programmes et interventions.
+          </p>
         </div>
-        <div class="container text-center forum-banner-content">
-            <div class="badge badge-orange fade-in-up">Événement à la une</div>
-            <h2 class="fade-in-up delay-1">Forum 2026 : <span class="accent">Oser pour le changement</span></h2>
-            <p class="fade-in-up delay-2">La 2ème édition du grand forum sur l'entrepreneuriat et l'investissement. Une
-                journée pour inspirer, former et connecter la jeunesse africaine.</p>
 
-            <div class="forum-banner-meta fade-in-up delay-3">
-                <span class="meta-tag"><i class="fas fa-calendar-alt"></i> 27 Juin 2026</span>
-                <span class="meta-tag"><i class="fas fa-clock"></i> 10h00 – 17h00</span>
-                <span class="meta-tag"><i class="fas fa-map-marker-alt"></i> ESCA, Casablanca</span>
-            </div>
+        <div class="objectives-layout">
+          <figure class="objectives-photo reveal">
+            <img src="assets/photos/forum/IMG_0464.webp"
+                 alt="Une participante souriante lors du Forum Growth Together 2026"
+                 loading="lazy" width="560" height="640">
+          </figure>
 
-            <div class="fade-in-up delay-4">
-                <a href="forum/index.html" class="btn btn-orange btn-large">Découvrir le Forum <i
-                        class="fas fa-arrow-right"></i></a>
-            </div>
+        <div class="objectives-grid">
+          <article class="gt-card objective-card reveal">
+            <span class="objective-number">01</span>
+            <h3>Information & Accès aux Bourses</h3>
+            <p>Être un relais d'information accessible sur les opportunités éducatives, concours et bourses pour les jeunes qui en sont souvent éloignés.</p>
+          </article>
+
+          <article class="gt-card objective-card reveal reveal-delay-1">
+            <span class="objective-number">02</span>
+            <h3>Excellence & Esprit d'Initiative</h3>
+            <p>Encourager la rigueur académique, la prise d'initiative et l'audace entrepreneuriale au sein des universités et écoles supérieures.</p>
+          </article>
+
+          <article class="gt-card objective-card reveal reveal-delay-2">
+            <span class="objective-number">03</span>
+            <h3>Compétences Clés & Soft Skills</h3>
+            <p>Accompagner le développement des aptitudes indispensables : communication percutante, leadership éthique, négociation et langues.</p>
+          </article>
+
+          <article class="gt-card objective-card reveal">
+            <span class="objective-number">04</span>
+            <h3>Méthodes d'Apprentissage Efficaces</h3>
+            <p>Former les élèves et étudiants aux techniques modernes de mémorisation, d'organisation personnelle et de productivité intellectuelle.</p>
+          </article>
+
+          <article class="gt-card objective-card reveal reveal-delay-1">
+            <span class="objective-number">05</span>
+            <h3>Confiance en Soi & Prise de Parole</h3>
+            <p>Travailler la présence scénique, l'autodiscipline, l'estime de soi et l'alignement avec ses talents profonds.</p>
+          </article>
+
+          <article class="gt-card objective-card reveal reveal-delay-2">
+            <span class="objective-number">06</span>
+            <h3>Bien-être Mental & Prévention</h3>
+            <p>Briser le tabou de la dépression et de l'isolement chez les étudiants en promouvant l'écoute mutuelle et l'équilibre psychologique.</p>
+          </article>
         </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section bg-dark" id="contact">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Nous <span class="accent">Contacter</span></h2>
-                <p class="section-subtitle">Une question ? Un partenariat ? Une idée ? N'hésitez pas à nous écrire.</p>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info slide-in-left">
-                    <h3>Restons en contact</h3>
-                    <p>Growth Together est toujours ouverte aux collaborations, partenariats et nouvelles idées. Que
-                        vous soyez étudiant, entrepreneur, investisseur ou simplement curieux, nous serions ravis
-                        d'échanger avec vous.</p>
-
-                    <div class="contact-details">
-                        <div class="detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>agrowthtogether@gmail.com</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+212 0612843918</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Casablanca, Maroc</span>
-                        </div>
-                    </div>
-
-                    <div class="social-links mt-4">
-                        <a href="https://www.linkedin.com/company/agrowthtogether/" target="_blank"
-                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/growth_together.a?igsh=MTdxMjJ1Mjh3dGt5Yg==" target="_blank"
-                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/1Bh3CekVWM/" target="_blank" aria-label="Facebook"><i
-                                class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-
-                <div class="contact-form-card slide-in-right">
-                    <form name="contact" netlify>
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hidden" style="display:none;">
-                            <label>Ne remplissez pas ce champ : <input name="bot-field"></label>
-                        </p>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nom complet</label>
-                                <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" placeholder="L'objet de votre message"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Envoyer <i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
+    <!-- 6. Formats d'Action (Activités) -->
+    <section class="actions-section" id="actions">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Formats de Déploiement</span>
+          <h2 class="section-title">Nos leviers d'action concrets</h2>
+          <p class="section-subtitle text-center">
+            Quatre dispositifs complémentaires pensés pour allier théorie, pratique et ouverture de réseau.
+          </p>
         </div>
+
+        <div class="actions-grid">
+          <article class="gt-card action-card reveal">
+            <div class="action-photo">
+              <img src="assets/photos/forum/IMG_0223.webp" alt="Participantes attentives pendant un atelier du Forum" loading="lazy" style="object-position: 70% 40%;">
+            </div>
+            <div class="action-icon" aria-hidden="true">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Formations Pratiques</h3>
+            <p>Ateliers interactifs en petits groupes axés sur la gestion de projet, le pitch, la finance et les compétences transversales.</p>
+          </article>
+
+          <article class="gt-card action-card reveal reveal-delay-1">
+            <div class="action-photo">
+              <img src="assets/photos/forum/IMG_0234.webp" alt="Une intervenante au pupitre de l’ESCA lors du Forum 2026" loading="lazy" style="object-position: center 30%;">
+            </div>
+            <div class="action-icon" aria-hidden="true">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Forums Annuels</h3>
+            <p>Rendez-vous phares réunissant experts, investisseurs et jeunes innovateurs autour de conférences inspirantes et de concours de pitch.</p>
+          </article>
+
+          <article class="gt-card action-card reveal reveal-delay-2">
+            <div class="action-photo">
+              <img src="assets/photos/forum/IMG_0385.webp" alt="Un expert écoute les échanges lors d’une conférence" loading="lazy" style="object-position: center 40%;">
+            </div>
+            <div class="action-icon" aria-hidden="true">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h3>Webinaires Panafricains</h3>
+            <p>Sessions en ligne ouvertes à travers tout le continent pour démocratiser le savoir et faciliter les retours d'expérience d'experts.</p>
+          </article>
+
+          <article class="gt-card action-card reveal reveal-delay-3">
+            <div class="action-photo">
+              <img src="assets/photos/forum/IMG_0471.webp" alt="Rencontre entre un professionnel et une étudiante devant le mur des partenaires" loading="lazy" style="object-position: 35% 30%;">
+            </div>
+            <div class="action-icon" aria-hidden="true">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h3>Réseautage & Mentorat</h3>
+            <p>Mise en relation structurée avec des professionnels établis et des pairs engagés pour accélérer le passage à l'échelle.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="section">
-        <div class="container text-center fade-in-up">
-            <h2 class="section-title">Nous <span class="accent-blue">Trouver</span></h2>
-            <p class="section-subtitle">Notre siège est basé à Casablanca, avec des antennes prévues dans tout le
-                continent africain.</p>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7745772635904!2d-7.634123523497262!3d33.58521744224095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d296cd8cb487%3A0xcbaecfc38d977da0!2sESCA%20Ecole%20de%20Management!5e0!3m2!1sfr!2sma!4v1714000000000!5m2!1sfr!2sma"
-                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    <!-- 7. Direction & Cofondateurs -->
+    <section class="founders-section" id="direction">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Gouvernance</span>
+          <h2 class="section-title">Direction & Cofondateurs</h2>
+          <p class="section-subtitle text-center">
+            Les cofondateurs qui portent la vision stratégique et la direction générale de Growth Together.
+          </p>
         </div>
+
+        <div class="founders-grid">
+          <!-- Joseph Brou Kouame -->
+          <article class="gt-card founder-card reveal">
+            <div class="founder-img-wrapper">
+              <img src="assets/photos/equipe/Joseph_BROU KOUAME.webp" 
+                   style="object-position: 35% 20%;"
+                   alt="Portrait de Joseph Brou Kouame, Président du Conseil Administratif" 
+                   loading="lazy">
+            </div>
+            <div class="founder-content">
+              <span class="founder-role">Cofondateur & Président du CA</span>
+              <h3>Joseph Brou Kouame</h3>
+              <p>Visionnaire et cofondateur de Growth Together, il préside le Conseil Administratif et impulse la direction stratégique de l'organisation.</p>
+            </div>
+          </article>
+
+          <!-- Marie France KRA -->
+          <article class="gt-card founder-card reveal reveal-delay-1">
+            <div class="founder-img-wrapper">
+              <img src="assets/photos/equipe/Marie-France_KRA.webp" 
+                   style="object-position: center 20%;"
+                   alt="Portrait de Marie France KRA, Vice-Présidente et Directrice du Conseil de Contrôle" 
+                   loading="lazy">
+            </div>
+            <div class="founder-content">
+              <span class="founder-role">Cofondatrice & Vice-Présidente</span>
+              <h3>Marie France KRA</h3>
+              <p>Cofondatrice et Directrice du Conseil de Contrôle, elle veille à la bonne gouvernance institutionnelle et à la conformité éthique de la mission.</p>
+            </div>
+          </article>
+
+          <!-- Benjamin ISTEFANAS -->
+          <article class="gt-card founder-card reveal reveal-delay-2">
+            <div class="founder-img-wrapper">
+              <img src="assets/photos/equipe/Benjamin_ISTEFANAS.webp" 
+                   style="object-position: center 15%;"
+                   alt="Portrait de Benjamin ISTEFANAS, Directeur du Conseil Exécutif" 
+                   loading="lazy">
+            </div>
+            <div class="founder-content">
+              <span class="founder-role">Cofondateur & Dir. Conseil Exécutif</span>
+              <h3>Benjamin ISTEFANAS</h3>
+              <p>Cofondateur et à la tête du Conseil Exécutif, il pilote l'opérationnel, les partenariats et la coordination générale des équipes terrain.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: var(--gt-space-8);">
+          <a href="pages/membres-ag.html" class="btn btn-secondary">
+            Découvrir l'équipe complète (18 membres) <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="assets/logo.png" alt="Growth Together" class="footer-logo">
-                <p>Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation.</p>
+    <!-- 8. Forum 2026 RÉTROSPECTIVE BANNER -->
+    <section class="forum-highlight-section" id="forum-highlight">
+      <div class="container">
+        <div class="forum-highlight-card reveal">
+          <div class="forum-highlight-content">
+            <span class="badge badge-accent"><i class="fas fa-history" aria-hidden="true"></i> Rétrospective Officielle</span>
+            <h2 style="margin-top: var(--gt-space-3);">Forum 2026 : Le grand succès du rassemblement</h2>
+            <p>
+              Le 27 Juin 2026 à l'ESCA Casablanca, plus de 100 jeunes acteurs, porteurs de projets et investisseurs ont fait vibrer l'entrepreneuriat africain. Revivez en images les moments forts, les pitchs d'exception et les ateliers de cette journée historique.
+            </p>
+            
+            <div class="forum-meta-tags">
+              <span class="forum-meta-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Édition clôturée avec succès</span>
+              <span class="forum-meta-badge"><i class="fas fa-users" aria-hidden="true"></i> 100+ Participants réunis</span>
+              <span class="forum-meta-badge"><i class="fas fa-rocket" aria-hidden="true"></i> 8 Projets pitchés</span>
+              <span class="forum-meta-badge"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ESCA, Casablanca</span>
             </div>
-            <div class="footer-links">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="#about">À Propos</a></li>
-                    <li><a href="#objectifs">Objectifs</a></li>
-                    <li><a href="#activites">Activités</a></li>
-                    <li><a href="pages/membres-ag.html">Équipe</a></li>
-                    <li><a href="forum/index.html">Forum 2026</a></li>
-                    <li><a href="pages/mentions-legales.html">Mentions Légales</a></li>
-                </ul>
+
+            <div style="display: flex; gap: var(--gt-space-4); flex-wrap: wrap;">
+              <a href="forum/index.html" class="btn btn-accent btn-lg">
+                Consulter la rétrospective & Galerie photos <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
             </div>
-            <div class="footer-contact">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> agrowthtogether@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +212 0612843918</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/agrowthtogether/" target="_blank" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/growth_together.a?igsh=MTdxMjJ1Mjh3dGt5Yg==" target="_blank"
-                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1Bh3CekVWM/" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
+          </div>
+
+          <div class="forum-highlight-image">
+            <img src="assets/photos/forum/IMG_0639.webp"
+                 alt="Remise d'un prix à un porteur de projet lors du Forum Growth Together 2026"
+                 loading="lazy" width="500" height="280" style="object-position: center 35%;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Contact & Formulaire Netlify -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Échange & Synergie</span>
+          <h2 class="section-title">Nous contacter</h2>
+          <p class="section-subtitle">
+            Une question, une envie de rejoindre le mouvement ou une proposition de partenariat ? Écrivez-nous.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Coordonnées et réseaux -->
+          <div class="contact-info reveal">
+            <h3>Restons connectés</h3>
+            <p class="text-muted">
+              Growth Together accueille les étudiants, entrepreneurs, mentors et partenaires institutionnels désireux de participer activement à l'émancipation de la jeunesse.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <i class="fas fa-envelope"></i>
                 </div>
-                <p class="mt-2 tag">#agrowthtogether</p>
+                <div>
+                  <div class="text-muted" style="font-size: var(--gt-text-xs); text-transform: uppercase;">Courriel officiel</div>
+                  <a href="mailto:agrowthtogether@gmail.com" class="text-ardoise" style="font-weight: 600;">agrowthtogether@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <div class="text-muted" style="font-size: var(--gt-text-xs); text-transform: uppercase;">Téléphone</div>
+                  <a href="tel:+2120612843918" class="text-ardoise" style="font-weight: 600;">+212 0612843918</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <div class="text-muted" style="font-size: var(--gt-text-xs); text-transform: uppercase;">Siège social</div>
+                  <span class="text-ardoise" style="font-weight: 600;">Casablanca, Maroc</span>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2026 Growth Together. Tous droits réservés. | <a href="pages/mentions-legales.html">Mentions
-                    Légales</a></p>
-        </div>
-    </footer>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-        <i class="fas fa-sun"></i>
-        <i class="fas fa-moon"></i>
-    </button>
+            <div class="social-links" aria-label="Réseaux sociaux officiels">
+              <a href="https://www.linkedin.com/company/agrowthtogether/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Consulter notre page LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/growth_together.a?igsh=MTdxMjJ1Mjh3dGt5Yg==" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Consulter notre profil Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.facebook.com/share/1Bh3CekVWM/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Consulter notre page Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+          <!-- Formulaire Netlify Accessible -->
+          <div class="gt-card reveal reveal-delay-1">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact">
+              
+              <!-- Piège anti-spam pour robots -->
+              <p class="sr-only">
+                <label>Ne pas remplir si vous êtes humain : <input name="bot-field" tabindex="-1"></label>
+              </p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Nom complet *</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Adresse courriel *</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="nom@exemple.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Objet du message *</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Renseignement, partenariat, adhésion..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Votre message *</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Détaillez votre demande..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Envoyer le message <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Carte Localisation -->
+    <section class="map-section" aria-label="Localisation géographique">
+      <div class="container">
+        <div class="map-wrapper reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.7745772635904!2d-7.634123523497262!3d33.58521744224095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d296cd8cb487%3A0xcbaecfc38d977da0!2sESCA%20Ecole%20de%20Management!5e0!3m2!1sfr!2sma!4v1714000000000!5m2!1sfr!2sma"
+            title="Localisation de l'ESCA École de Management à Casablanca"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Institutionnel Nuit Profonde (#091116) -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- 1. Marque & Philosophie -->
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Growth Together" class="footer-logo" width="48" height="48">
+        <div class="footer-baseline">Ground. Grow. Widen.™</div>
+        <p class="footer-quote">
+          « Éveillés pour réveiller une génération de jeunes africains acteur de sa propre transformation. »
+        </p>
+      </div>
+
+      <!-- 2. Piliers & Navigation -->
+      <div class="footer-column">
+        <h3>Démarche</h3>
+        <ul class="footer-links">
+          <li><a href="#piliers" class="footer-link">Les 3 Piliers</a></li>
+          <li><a href="#mission" class="footer-link">Notre Mission</a></li>
+          <li><a href="#objectifs" class="footer-link">Objectifs</a></li>
+          <li><a href="#actions" class="footer-link">Formats d'action</a></li>
+        </ul>
+      </div>
+
+      <!-- 3. Équipe & Événements -->
+      <div class="footer-column">
+        <h3>Organisation</h3>
+        <ul class="footer-links">
+          <li><a href="pages/membres-ag.html" class="footer-link">Conseil & Équipe</a></li>
+          <li><a href="forum/index.html" class="footer-link">Rétrospective Forum 2026</a></li>
+          <li><a href="pages/mentions-legales.html" class="footer-link">Mentions Légales</a></li>
+        </ul>
+      </div>
+
+      <!-- 4. Contact & Réseaux -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:agrowthtogether@gmail.com" class="footer-link">agrowthtogether@gmail.com</a></li>
+          <li><a href="tel:+2120612843918" class="footer-link">+212 0612843918</a></li>
+          <li><span class="footer-link">Casablanca, Maroc</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mention légale basse -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 Growth Together (GT). Association à but non lucratif. Tous droits réservés.</p>
+        <div class="footer-bottom-actions">
+          <a href="pages/mentions-legales.html">Conditions d'utilisation & Mentions Légales</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Commutateur de Thème Accessible (Light/Dark) -->
+  <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Basculer le mode d'affichage" title="Changer de thème">
+    <i class="fas fa-moon icon-moon" aria-hidden="true"></i>
+    <i class="fas fa-sun icon-sun" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
-
 </html>
