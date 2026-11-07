@@ -1575,3 +1575,45 @@ html:not(.js) .reveal {
     min-width: 0;
   }
 }
+
+/* Les liens du menu restent sur une seule ligne */
+.nav-link {
+  white-space: nowrap;
+}
+
+/* Menu déroulant dès 1100 px : 7 liens ne tiennent pas à côté du logo sur tablette */
+@media (max-width: 1100px) {
+  .nav-menu {
+    position: fixed;
+    top: var(--gt-header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--gt-bg-surface);
+    border-bottom: 1px solid var(--gt-border-subtle);
+    padding: var(--gt-space-6);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gt-space-4);
+    box-shadow: var(--gt-shadow-modal);
+    transform: translateY(-120%);
+    transition: transform var(--gt-duration-normal) var(--gt-ease-standard);
+    z-index: 998;
+  }
+
+  .nav-menu.is-open {
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .nav-menu .nav-menu-cta {
+    display: inline-flex;
+    margin-top: var(--gt-space-2);
+  }
+}
