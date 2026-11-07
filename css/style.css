@@ -1770,213 +1770,319 @@ body.dark-mode main > section.register-cta-section {
 }
 
 /* ==========================================================================
-   HERO PLEIN ÉCRAN (page d'accueil)
-   Photo de groupe en fond, voile sombre, texte centré, fondu vers la page.
-   Le hero reste sombre dans les deux thèmes, comme une couverture.
+   HERO « GROUND. GROW. WIDEN. »
+   La devise est l'image : chaque mot est plus grand, plus large et plus
+   intense que le précédent. La photo du Forum s'ouvre en s'élargissant.
+   C'est le seul mouvement automatique de la page.
    ========================================================================== */
-main > section.hero-section.hero-full {
-  position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
-  margin-top: calc(-1 * var(--gt-header-height)); /* passe sous le menu transparent */
-  padding: calc(var(--gt-header-height) + var(--gt-space-12)) 0 var(--gt-space-24);
+main > section.hero-section.hero-grow {
   display: flex;
   align-items: center;
-  overflow: hidden;
-  background-color: var(--gt-color-nuit-profonde);
-  color: var(--gt-color-blanc-neutre);
-  isolation: isolate;
+  min-height: calc(100vh - var(--gt-header-height));
+  min-height: calc(100svh - var(--gt-header-height));
+  padding-top: clamp(2.5rem, 7vh, 5rem);
+  padding-bottom: clamp(3rem, 9vh, 6rem);
+  background-color: transparent;
+  overflow: visible;
 }
 
-.hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  transform: scale(1.04);
-  animation: hero-drift 18s ease-out forwards;
-}
-
-@keyframes hero-drift {
-  to { transform: scale(1); }
-}
-
-/* Voile : assez sombre pour lire le texte, puis fondu vers le fond de la page */
-.hero-full::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(ellipse at 50% 45%, rgba(9, 17, 22, 0) 0%, rgba(9, 17, 22, 0.35) 80%),
-    linear-gradient(180deg,
-      rgba(9, 17, 22, 0.55) 0%,
-      rgba(9, 17, 22, 0.48) 35%,
-      rgba(9, 17, 22, 0.6) 90%,
-      var(--gt-bg-page) 100%);
-}
-
-.hero-full-inner {
-  position: relative;
+.hero-grow-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  grid-template-areas:
+    "mantra frame"
+    "copy   frame";
+  column-gap: clamp(2rem, 5vw, 5rem);
+  row-gap: clamp(2rem, 5vh, 3.5rem);
+  align-items: end;
   width: 100%;
 }
 
-.hero-full .hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-pill {
-  display: inline-block;
-  padding: var(--gt-space-2) var(--gt-space-6);
-  margin-bottom: var(--gt-space-6);
-  border: 1px solid rgba(250, 250, 250, 0.28);
-  border-radius: var(--gt-radius-full);
-  background-color: rgba(250, 250, 250, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  font-size: 0.8125rem;
+/* La devise */
+.hero-mantra {
+  grid-area: mantra;
+  margin: 0;
+  font-family: var(--gt-font-display);
   font-weight: var(--gt-font-weight-bold);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gt-color-blanc-neutre);
+  line-height: 0.95;
 }
 
-.hero-full .hero-title {
-  font-size: clamp(2.5rem, 6.2vw, 5rem);
-  line-height: 1.05;
-  color: var(--gt-color-blanc-neutre);
-  margin-bottom: var(--gt-space-6);
-  text-wrap: balance;
+.mantra-line {
+  display: block;
+  white-space: nowrap;
 }
 
-.hero-title-accent {
-  color: #5EB2E2; /* bleu élan clair, lisible sur la photo */
+.mantra-word {
+  display: inline-block;
 }
 
-.hero-full .hero-description {
-  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
-  color: rgba(250, 250, 250, 0.88);
-  max-width: 62ch;
-  margin: 0 auto var(--gt-space-8);
+
+
+.mantra-ground .mantra-word {
+  font-size: clamp(2.75rem, 5.4vw, 5rem);
+  letter-spacing: -0.045em;
+  color: var(--gt-text-muted);
 }
 
-.hero-full .hero-actions {
-  justify-content: center;
+.mantra-grow .mantra-word {
+  font-size: clamp(3.5rem, 7.4vw, 7rem);
+  letter-spacing: -0.025em;
+  color: var(--gt-text-secondary);
 }
 
-.hero-full .hero-title,
-.hero-full .hero-description {
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+.mantra-widen .mantra-word {
+  font-size: clamp(4.5rem, 10.2vw, 9.75rem);
+  letter-spacing: 0.015em; /* le mot s'élargit littéralement */
+  color: var(--gt-text-primary);
 }
 
-/* Indicateur de défilement */
-.hero-scroll {
-  position: absolute;
-  left: 50%;
-  bottom: var(--gt-space-16);
-  transform: translateX(-50%);
+
+/* La photo */
+.hero-frame {
+  grid-area: frame;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--gt-space-1);
-  font-size: 0.75rem;
-  font-weight: var(--gt-font-weight-semibold);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(250, 250, 250, 0.75);
-  text-decoration: none;
+  gap: var(--gt-space-3);
+  margin: 0;
 }
 
-.hero-scroll i {
-  animation: hero-bounce 2s ease-in-out infinite;
+.hero-frame img {
+  flex: 1;
+  width: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: 50% 42%;
+  border-radius: 20px;
+  background-color: var(--gt-bg-muted);
 }
 
-.hero-scroll:hover {
-  color: var(--gt-color-blanc-neutre);
+.hero-frame figcaption {
+  font-size: var(--gt-text-sm);
+  color: var(--gt-text-muted);
 }
 
-@keyframes hero-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+/* Le texte */
+.hero-copy {
+  grid-area: copy;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-media img,
-  .hero-scroll i {
-    animation: none;
-    transform: none;
+main > section.hero-grow .hero-title {
+  font-family: var(--gt-font-display);
+  font-size: clamp(1.375rem, 2.1vw, 1.875rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  max-width: 26ch;
+  margin: 0 0 var(--gt-space-4);
+  color: var(--gt-text-primary);
+}
+
+main > section.hero-grow .hero-description {
+  max-width: 52ch;
+  margin: 0 0 var(--gt-space-8);
+  color: var(--gt-text-muted);
+}
+
+/* Séquence d'ouverture : les mots montent l'un après l'autre, puis la photo s'élargit */
+@media (prefers-reduced-motion: no-preference) {
+  .mantra-line {
+    animation: mantra-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
+  .mantra-ground { animation-delay: 0.05s; }
+  .mantra-grow   { animation-delay: 0.2s; }
+  .mantra-widen  { animation-delay: 0.35s; }
+
+  .hero-frame img {
+    animation: frame-widen 1.3s cubic-bezier(0.65, 0, 0.35, 1) 0.45s both;
+  }
+
+  .hero-copy,
+  .hero-frame figcaption {
+    animation: copy-in 0.6s ease-out 0.9s both;
+  }
+}
+
+@keyframes mantra-rise {
+  from { opacity: 0; transform: translateY(0.3em); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes frame-widen {
+  from { clip-path: inset(0 44% 0 44% round 20px); }
+  to   { clip-path: inset(0 0 0 0 round 20px); }
+}
+
+@keyframes copy-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (max-width: 1100px) {
+  .hero-grow-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "mantra"
+      "frame"
+      "copy";
+    align-items: start;
+  }
+
+  .hero-frame img {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    flex: none;
+  }
+
+  .mantra-ground .mantra-word { font-size: clamp(2.5rem, 10vw, 4.5rem); }
+  .mantra-grow .mantra-word   { font-size: clamp(3.1rem, 13vw, 6rem); }
+  .mantra-widen .mantra-word  { font-size: clamp(3.9rem, 17vw, 8.25rem); }
 }
 
 @media (max-width: 640px) {
-  main > section.hero-section.hero-full {
-    padding-bottom: var(--gt-space-20);
+  main > section.hero-section.hero-grow {
+    min-height: 0;
   }
 
-  .hero-pill {
-    font-size: 0.6875rem;
-    letter-spacing: 0.12em;
-  }
+  .mantra-ground .mantra-word { font-size: 14vw; }
+  .mantra-grow .mantra-word   { font-size: 18.5vw; }
+  .mantra-widen .mantra-word  { font-size: 23.5vw; }
 
-  .hero-full .hero-actions {
+  .hero-grow .hero-actions {
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .hero-scroll {
-    bottom: var(--gt-space-12);
   }
 }
 
 /* ==========================================================================
-   MENU TRANSPARENT SUR LA PHOTO (accueil), opaque dès qu'on défile
+   SOBRIÉTÉ : un seul moment animé (le hero), pas d'étiquettes en capitales,
+   pas d'effet de survol sur ce qui n'est pas cliquable.
    ========================================================================== */
-.has-photo-hero .navbar {
-  transition: background-color var(--gt-duration-normal) var(--gt-ease-standard),
-              box-shadow var(--gt-duration-normal) var(--gt-ease-standard),
-              backdrop-filter var(--gt-duration-normal) var(--gt-ease-standard);
+
+/* Le contenu est là d'emblée : plus de fondu section par section */
+html .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
-.has-photo-hero .navbar:not(.scrolled):not(:has(.nav-menu.is-open)) {
-  background-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+/* Les étiquettes s'écrivent normalement */
+html .badge,
+html .hero-baseline,
+html .stat-label,
+html .vision-label,
+html .footer-baseline,
+html .event-meta-label,
+html .pitch-category,
+html .forum-stat-label,
+html .team-stat-label {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Les cartes d'information ne bougent pas au survol */
+html .gt-card:hover,
+html .pillar-card:hover,
+html .director-card:hover,
+html .member-card:hover,
+html .event-meta-item:hover {
+  transform: none;
+}
+
+html .founder-card:hover .founder-img-wrapper img,
+html .member-card:hover .member-photo-wrapper img {
+  transform: none;
+}
+
+/* Nom des piliers : le mot de la devise, puis le verbe français */
+.pillar-name .pillar-verb {
+  display: block;
+  margin-top: var(--gt-space-1);
+  font-family: var(--gt-font-body);
+  font-size: var(--gt-text-base);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--gt-text-muted);
+}
+
+/* ==========================================================================
+   ACCUEIL : CHIFFRES EN UNE PHRASE
+   ========================================================================== */
+main > section.stats-section {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.stats-statement {
+  max-width: 34ch;
+  margin: 0;
+  font-family: var(--gt-font-display);
+  font-size: clamp(1.625rem, 3.4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--gt-text-muted);
+  text-wrap: balance;
+}
+
+.stats-statement strong {
+  font-weight: var(--gt-font-weight-bold);
+  color: var(--gt-text-primary);
+}
+
+/* ==========================================================================
+   ACCUEIL : LES SIX OBJECTIFS EN LISTE (ce n'est pas une suite)
+   ========================================================================== */
+.objectives-grid {
+  column-gap: clamp(2rem, 4vw, 3.5rem);
+  row-gap: clamp(2rem, 4vw, 3rem);
+}
+
+.objective-card {
+  padding: 0;
+  background: none;
+  border: 0;
   box-shadow: none;
-  border-bottom-color: transparent;
 }
 
-/* Logo en blanc sur la photo */
-.has-photo-hero .navbar:not(.scrolled):not(:has(.nav-menu.is-open)) .nav-logo-svg {
-  filter: brightness(0) invert(1);
+.objective-card h3 {
+  font-family: var(--gt-font-display);
+  font-size: var(--gt-text-xl);
+  font-weight: var(--gt-font-weight-bold);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--gt-space-3);
+  color: var(--gt-text-primary);
 }
 
-/* Bouton ☰ en verre sur la photo */
-.has-photo-hero .navbar:not(.scrolled):not(:has(.nav-menu.is-open)) .hamburger {
-  background-color: rgba(250, 250, 250, 0.1);
-  border-color: rgba(250, 250, 250, 0.3);
-  color: var(--gt-color-blanc-neutre);
+.objective-card h3::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-bottom: var(--gt-space-4);
+  border-radius: 2px;
+  background-color: var(--gt-interactive-primary);
 }
 
-/* Liens en blanc quand le menu est affiché en ligne (grand écran) */
-@media (min-width: 1101px) {
-  .has-photo-hero .navbar:not(.scrolled) .nav-link {
-    color: rgba(250, 250, 250, 0.9);
-  }
+.objective-card p {
+  max-width: 42ch;
+}
 
-  .has-photo-hero .navbar:not(.scrolled) .nav-link:hover {
-    color: var(--gt-color-blanc-neutre);
-  }
+/* ==========================================================================
+   ALIGNEMENT : les titres de section s'alignent à gauche, comme le hero
+   ========================================================================== */
+main .section-header.text-center,
+main .section-header .text-center {
+  text-align: left;
+}
+
+main .section-header .section-subtitle.text-center {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+main .section-header {
+  max-width: 760px;
 }

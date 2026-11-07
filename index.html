@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Stylesheets -->
-  <link rel="preload" as="image" href="assets/photos/forum/hero-forum-2400.webp" imagesrcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w" imagesizes="100vw">
+  <link rel="preload" as="image" href="assets/photos/forum/hero-forum-1200.webp" imagesrcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w" imagesizes="(min-width: 1101px) 40vw, 100vw">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -47,7 +47,7 @@
   </script>
 </head>
 
-<body class="has-photo-hero">
+<body>
   <!-- Lien d'évitement accessibilité (WCAG 2.1 AA) -->
   <a href="#main-content" class="sr-only-focusable">Aller au contenu principal</a>
 
@@ -84,40 +84,42 @@
   <main id="main-content">
     
     <!-- 1. Hero Section (Ground. Grow. Widen.) -->
-    <section class="hero-section hero-full" id="hero">
-      <!-- Photo de groupe du Forum 2026, en fond plein écran -->
-      <div class="hero-media" aria-hidden="true">
-        <img src="assets/photos/forum/hero-forum-2400.webp"
-             srcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w"
-             sizes="100vw" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
-      </div>
+    <section class="hero-section hero-grow" id="hero">
+      <div class="container hero-grow-grid">
+        <!-- La devise devient l'image : chaque mot grandit -->
+        <p class="hero-mantra" lang="en" aria-label="Ground. Grow. Widen. : ancrer, grandir, rayonner">
+          <span class="mantra-line mantra-ground"><span class="mantra-word">Ground.</span></span>
+          <span class="mantra-line mantra-grow"><span class="mantra-word">Grow.</span></span>
+          <span class="mantra-line mantra-widen"><span class="mantra-word">Widen.</span></span>
+        </p>
 
-      <div class="container hero-full-inner">
-        <div class="hero-content reveal">
-          <span class="hero-pill">Ground. Grow. Widen.™</span>
-          <h1 class="hero-title">Grandir seul est possible, <span class="hero-title-accent">grandir ensemble</span> est durable.</h1>
+        <figure class="hero-frame">
+          <img src="assets/photos/forum/hero-forum-1200.webp"
+               srcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w"
+               sizes="(min-width: 1101px) 40vw, 100vw"
+               alt="Les participants du Forum Growth Together 2026 réunis à l'ESCA Casablanca"
+               width="1200" height="800" fetchpriority="high" decoding="async">
+          <figcaption>Forum 2026, ESCA Casablanca</figcaption>
+        </figure>
+
+        <div class="hero-copy">
+          <h1 class="hero-title">Grandir seul est possible, grandir ensemble est durable.</h1>
           <p class="hero-description">
-            Growth Together accompagne la jeunesse africaine vers l'entrepreneuriat, le leadership et l'émancipation personnelle. Ensemble, bâtissons un continent où chaque jeune est acteur de son propre changement.
+            Growth Together accompagne la jeunesse africaine vers l'entrepreneuriat, le leadership et l'émancipation personnelle, depuis Casablanca.
           </p>
           <div class="hero-actions">
-            <a href="#piliers" class="btn btn-primary btn-lg">Découvrir la démarche <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
-            <a href="forum/index.html" class="btn btn-accent btn-lg">Forum 2026 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#piliers" class="btn btn-primary btn-lg">Découvrir notre démarche</a>
+            <a href="forum/index.html" class="btn btn-accent btn-lg">Voir le Forum 2026</a>
           </div>
         </div>
       </div>
-
-      <a href="#piliers" class="hero-scroll" aria-label="Défiler vers la suite de la page">
-        <span>Défiler</span>
-        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-      </a>
     </section>
 
     <!-- 2. Framework des 3 Piliers (Ground, Grow, Widen) -->
     <section class="pillars-section" id="piliers">
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-tag">Notre Philosophie d'Action</span>
-          <h2 class="section-title">Le triptyque de transformation : <span class="text-elan">Ground. Grow. Widen.</span></h2>
+          <h2 class="section-title">Trois temps pour grandir</h2>
           <p class="section-subtitle text-center">
             Chaque action de notre association s'inscrit dans cette démarche en trois temps, garante d'un développement personnel et entrepreneurial durable.
           </p>
@@ -127,10 +129,9 @@
           <!-- Pilier 1 : Ground -->
           <article class="pillar-card reveal reveal-delay-1">
             <div class="pillar-header">
-              <span class="badge badge-pillar">Étape 01</span>
               <span class="pillar-step">01</span>
             </div>
-            <h3 class="pillar-name">Ground — Ancrer</h3>
+            <h3 class="pillar-name"><span lang="en">Ground</span> <span class="pillar-verb">ancrer</span></h3>
             <p class="pillar-principle">Toute progression commence par un point de départ assumé sans jugement.</p>
             <p class="text-muted" style="font-size: var(--gt-text-sm);">
               Identifier son potentiel brut, surmonter l'inhibition et poser des bases saines. Il n'y a pas d'ambition durable sans lucidité et acceptation de soi.
@@ -143,10 +144,9 @@
           <!-- Pilier 2 : Grow -->
           <article class="pillar-card reveal reveal-delay-2">
             <div class="pillar-header">
-              <span class="badge badge-pillar">Étape 02</span>
               <span class="pillar-step">02</span>
             </div>
-            <h3 class="pillar-name">Grow — Grandir</h3>
+            <h3 class="pillar-name"><span lang="en">Grow</span> <span class="pillar-verb">grandir</span></h3>
             <p class="pillar-principle">Le mouvement régulier crée la transformation durable.</p>
             <p class="text-muted" style="font-size: var(--gt-text-sm);">
               Acquérir des outils concrets, cultiver la rigueur, tester ses projets et apprendre avec constance. Chaque petit pas régulier forge l'excellence.
@@ -159,10 +159,9 @@
           <!-- Pilier 3 : Widen -->
           <article class="pillar-card reveal reveal-delay-3">
             <div class="pillar-header">
-              <span class="badge badge-accent">Étape 03</span>
               <span class="pillar-step">03</span>
             </div>
-            <h3 class="pillar-name">Widen — Rayonner</h3>
+            <h3 class="pillar-name"><span lang="en">Widen</span> <span class="pillar-verb">rayonner</span></h3>
             <p class="pillar-principle">On ne grandit jamais seul ; la réussite individuelle devient levier collectif.</p>
             <p class="text-muted" style="font-size: var(--gt-text-sm);">
               Partager son expérience, créer des opportunités, inspirer son entourage et bâtir des ponts panafricains durables pour les générations suivantes.
@@ -176,26 +175,11 @@
     </section>
 
     <!-- 3. Chiffres Clés / Impact (avec Compteurs Animés) -->
-    <section class="stats-section" aria-label="Chiffres clés et impact">
+    <section class="stats-section" aria-label="Growth Together en chiffres">
       <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item reveal">
-            <div class="stat-number counter-animated" data-target="2024">2024</div>
-            <div class="stat-label">Année de création</div>
-          </div>
-          <div class="stat-item reveal reveal-delay-1">
-            <div class="stat-number counter-animated" data-target="100" data-suffix="+">100+</div>
-            <div class="stat-label">Participants mobilisés</div>
-          </div>
-          <div class="stat-item reveal reveal-delay-2">
-            <div class="stat-number counter-animated" data-target="6">6</div>
-            <div class="stat-label">Objectifs stratégiques</div>
-          </div>
-          <div class="stat-item reveal reveal-delay-3">
-            <div class="stat-number counter-animated" data-target="8" data-suffix="+">8+</div>
-            <div class="stat-label">Pays représentés</div>
-          </div>
-        </div>
+        <p class="stats-statement">
+          Depuis <strong>octobre 2024</strong>, plus de <strong>100 jeunes</strong> venus de <strong>8 pays</strong> ont rejoint le mouvement autour de <strong>6 objectifs</strong> communs.
+        </p>
       </div>
     </section>
 
@@ -204,8 +188,7 @@
       <div class="container">
         <div class="mission-grid">
           <div class="mission-text reveal">
-            <span class="section-tag">Notre Mission</span>
-            <h2 class="section-title">Éveiller et déployer le potentiel de la <span class="text-elan">jeunesse africaine</span></h2>
+            <h2 class="section-title">Éveiller et déployer le potentiel de la jeunesse africaine</h2>
             <p>
               Fondée en octobre 2024 à Casablanca, <strong>Growth Together (GT)</strong> est une association à but non lucratif régie par la législation marocaine. Areligieuse, apolitique et non syndicale, notre organisation est née d'une certitude partagée : chaque jeune africain porte en lui la capacité de transformer sa vie et son environnement.
             </p>
@@ -234,47 +217,40 @@
     <section class="objectives-section" id="objectifs">
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-tag">Engagements Concrets</span>
-          <h2 class="section-title">Nos 6 objectifs fondamentaux</h2>
+          <h2 class="section-title">Nos six objectifs</h2>
           <p class="section-subtitle text-center">
             Une feuille de route pragmatique qui structure l'ensemble de nos programmes et interventions.
           </p>
         </div>
 
         <div class="objectives-grid">
-          <article class="gt-card objective-card reveal">
-            <span class="objective-number">01</span>
-            <h3>Information & Accès aux Bourses</h3>
+          <article class="objective-card reveal">
+            <h3>Informer sur les bourses et les opportunités</h3>
             <p>Être un relais d'information accessible sur les opportunités éducatives, concours et bourses pour les jeunes qui en sont souvent éloignés.</p>
           </article>
 
-          <article class="gt-card objective-card reveal reveal-delay-1">
-            <span class="objective-number">02</span>
-            <h3>Excellence & Esprit d'Initiative</h3>
+          <article class="objective-card reveal reveal-delay-1">
+            <h3>Cultiver l'excellence et l'esprit d'initiative</h3>
             <p>Encourager la rigueur académique, la prise d'initiative et l'audace entrepreneuriale au sein des universités et écoles supérieures.</p>
           </article>
 
-          <article class="gt-card objective-card reveal reveal-delay-2">
-            <span class="objective-number">03</span>
-            <h3>Compétences Clés & Soft Skills</h3>
+          <article class="objective-card reveal reveal-delay-2">
+            <h3>Développer les compétences clés</h3>
             <p>Accompagner le développement des aptitudes indispensables : communication percutante, leadership éthique, négociation et langues.</p>
           </article>
 
-          <article class="gt-card objective-card reveal">
-            <span class="objective-number">04</span>
-            <h3>Méthodes d'Apprentissage Efficaces</h3>
+          <article class="objective-card reveal">
+            <h3>Transmettre des méthodes d'apprentissage efficaces</h3>
             <p>Former les élèves et étudiants aux techniques modernes de mémorisation, d'organisation personnelle et de productivité intellectuelle.</p>
           </article>
 
-          <article class="gt-card objective-card reveal reveal-delay-1">
-            <span class="objective-number">05</span>
-            <h3>Confiance en Soi & Prise de Parole</h3>
+          <article class="objective-card reveal reveal-delay-1">
+            <h3>Renforcer la confiance en soi et la prise de parole</h3>
             <p>Travailler la présence scénique, l'autodiscipline, l'estime de soi et l'alignement avec ses talents profonds.</p>
           </article>
 
-          <article class="gt-card objective-card reveal reveal-delay-2">
-            <span class="objective-number">06</span>
-            <h3>Bien-être Mental & Prévention</h3>
+          <article class="objective-card reveal reveal-delay-2">
+            <h3>Prendre soin de la santé mentale</h3>
             <p>Briser le tabou de la dépression et de l'isolement chez les étudiants en promouvant l'écoute mutuelle et l'équilibre psychologique.</p>
           </article>
         </div>
@@ -285,7 +261,6 @@
     <section class="actions-section" id="actions">
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-tag">Formats de Déploiement</span>
           <h2 class="section-title">Nos leviers d'action concrets</h2>
           <p class="section-subtitle text-center">
             Quatre dispositifs complémentaires pensés pour allier théorie, pratique et ouverture de réseau.
@@ -332,7 +307,6 @@
     <section class="founders-section" id="direction">
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-tag">Gouvernance</span>
           <h2 class="section-title">Direction & Cofondateurs</h2>
           <p class="section-subtitle text-center">
             Les cofondateurs qui portent la vision stratégique et la direction générale de Growth Together.
@@ -388,7 +362,7 @@
 
         <div class="text-center reveal" style="margin-top: var(--gt-space-8);">
           <a href="pages/membres-ag.html" class="btn btn-secondary">
-            Découvrir l'équipe complète (18 membres) <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            Découvrir l'équipe complète (18 membres)
           </a>
         </div>
       </div>
@@ -399,7 +373,6 @@
       <div class="container">
         <div class="forum-highlight-card reveal">
           <div class="forum-highlight-content">
-            <span class="badge badge-accent"><i class="fas fa-history" aria-hidden="true"></i> Rétrospective Officielle</span>
             <h2 style="margin-top: var(--gt-space-3);">Forum 2026 : Le grand succès du rassemblement</h2>
             <p>
               Le 27 Juin 2026 à l'ESCA Casablanca, plus de 100 jeunes acteurs, porteurs de projets et investisseurs ont fait vibrer l'entrepreneuriat africain. Revivez en images les moments forts, les pitchs d'exception et les ateliers de cette journée historique.
@@ -414,7 +387,7 @@
 
             <div style="display: flex; gap: var(--gt-space-4); flex-wrap: wrap;">
               <a href="forum/index.html" class="btn btn-accent btn-lg">
-                Consulter la rétrospective & Galerie photos <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                Consulter la rétrospective & Galerie photos
               </a>
             </div>
           </div>
@@ -432,7 +405,6 @@
     <section class="contact-section" id="contact">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">Échange & Synergie</span>
           <h2 class="section-title">Nous contacter</h2>
           <p class="section-subtitle">
             Une question, une envie de rejoindre le mouvement ou une proposition de partenariat ? Écrivez-nous.
