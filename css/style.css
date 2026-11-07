@@ -1768,3 +1768,215 @@ body.dark-mode main > section.register-cta-section {
   color: #FF773D;
   background-color: rgba(255, 119, 61, 0.12);
 }
+
+/* ==========================================================================
+   HERO PLEIN ÉCRAN (page d'accueil)
+   Photo de groupe en fond, voile sombre, texte centré, fondu vers la page.
+   Le hero reste sombre dans les deux thèmes, comme une couverture.
+   ========================================================================== */
+main > section.hero-section.hero-full {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--gt-header-height)); /* passe sous le menu transparent */
+  padding: calc(var(--gt-header-height) + var(--gt-space-12)) 0 var(--gt-space-24);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--gt-color-nuit-profonde);
+  color: var(--gt-color-blanc-neutre);
+  isolation: isolate;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transform: scale(1.04);
+  animation: hero-drift 18s ease-out forwards;
+}
+
+@keyframes hero-drift {
+  to { transform: scale(1); }
+}
+
+/* Voile : assez sombre pour lire le texte, puis fondu vers le fond de la page */
+.hero-full::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(9, 17, 22, 0) 0%, rgba(9, 17, 22, 0.35) 80%),
+    linear-gradient(180deg,
+      rgba(9, 17, 22, 0.55) 0%,
+      rgba(9, 17, 22, 0.48) 35%,
+      rgba(9, 17, 22, 0.6) 90%,
+      var(--gt-bg-page) 100%);
+}
+
+.hero-full-inner {
+  position: relative;
+  width: 100%;
+}
+
+.hero-full .hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-pill {
+  display: inline-block;
+  padding: var(--gt-space-2) var(--gt-space-6);
+  margin-bottom: var(--gt-space-6);
+  border: 1px solid rgba(250, 250, 250, 0.28);
+  border-radius: var(--gt-radius-full);
+  background-color: rgba(250, 250, 250, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 0.8125rem;
+  font-weight: var(--gt-font-weight-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gt-color-blanc-neutre);
+}
+
+.hero-full .hero-title {
+  font-size: clamp(2.5rem, 6.2vw, 5rem);
+  line-height: 1.05;
+  color: var(--gt-color-blanc-neutre);
+  margin-bottom: var(--gt-space-6);
+  text-wrap: balance;
+}
+
+.hero-title-accent {
+  color: #5EB2E2; /* bleu élan clair, lisible sur la photo */
+}
+
+.hero-full .hero-description {
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  color: rgba(250, 250, 250, 0.88);
+  max-width: 62ch;
+  margin: 0 auto var(--gt-space-8);
+}
+
+.hero-full .hero-actions {
+  justify-content: center;
+}
+
+.hero-full .hero-title,
+.hero-full .hero-description {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Indicateur de défilement */
+.hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: var(--gt-space-16);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gt-space-1);
+  font-size: 0.75rem;
+  font-weight: var(--gt-font-weight-semibold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.75);
+  text-decoration: none;
+}
+
+.hero-scroll i {
+  animation: hero-bounce 2s ease-in-out infinite;
+}
+
+.hero-scroll:hover {
+  color: var(--gt-color-blanc-neutre);
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img,
+  .hero-scroll i {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  main > section.hero-section.hero-full {
+    padding-bottom: var(--gt-space-20);
+  }
+
+  .hero-pill {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-full .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-scroll {
+    bottom: var(--gt-space-12);
+  }
+}
+
+/* ==========================================================================
+   MENU TRANSPARENT SUR LA PHOTO (accueil), opaque dès qu'on défile
+   ========================================================================== */
+.has-photo-hero .navbar {
+  transition: background-color var(--gt-duration-normal) var(--gt-ease-standard),
+              box-shadow var(--gt-duration-normal) var(--gt-ease-standard),
+              backdrop-filter var(--gt-duration-normal) var(--gt-ease-standard);
+}
+
+.has-photo-hero .navbar:not(.scrolled):not(:has(.nav-menu.is-open)) {
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-bottom-color: transparent;
+}
+
+/* Logo en blanc sur la photo */
+.has-photo-hero .navbar:not(.scrolled):not(:has(.nav-menu.is-open)) .nav-logo-svg {
+  filter: brightness(0) invert(1);
+}
+
+/* Bouton ☰ en verre sur la photo */
+.has-photo-hero .navbar:not(.scrolled):not(:has(.nav-menu.is-open)) .hamburger {
+  background-color: rgba(250, 250, 250, 0.1);
+  border-color: rgba(250, 250, 250, 0.3);
+  color: var(--gt-color-blanc-neutre);
+}
+
+/* Liens en blanc quand le menu est affiché en ligne (grand écran) */
+@media (min-width: 1101px) {
+  .has-photo-hero .navbar:not(.scrolled) .nav-link {
+    color: rgba(250, 250, 250, 0.9);
+  }
+
+  .has-photo-hero .navbar:not(.scrolled) .nav-link:hover {
+    color: var(--gt-color-blanc-neutre);
+  }
+}

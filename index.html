@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Stylesheets -->
+  <link rel="preload" as="image" href="assets/photos/forum/hero-forum-2400.webp" imagesrcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w" imagesizes="100vw">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -46,7 +47,7 @@
   </script>
 </head>
 
-<body>
+<body class="has-photo-hero">
   <!-- Lien d'évitement accessibilité (WCAG 2.1 AA) -->
   <a href="#main-content" class="sr-only-focusable">Aller au contenu principal</a>
 
@@ -83,51 +84,32 @@
   <main id="main-content">
     
     <!-- 1. Hero Section (Ground. Grow. Widen.) -->
-    <section class="hero-section" id="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content reveal">
-            <span class="hero-baseline">Ground. Grow. Widen.™</span>
-            <h1 class="hero-title">Grandir seul est possible, <span class="text-elan">grandir ensemble</span> est durable.</h1>
-            <p class="hero-description">
-              Growth Together accompagne la jeunesse africaine vers l'entrepreneuriat, le leadership et l'émancipation personnelle. Ensemble, bâtissons un continent où chaque jeune est acteur de son propre changement.
-            </p>
-            <div class="hero-actions">
-              <a href="#piliers" class="btn btn-primary btn-lg">Découvrir la démarche <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
-              <a href="forum/index.html" class="btn btn-accent btn-lg">Forum 2026 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-          </div>
+    <section class="hero-section hero-full" id="hero">
+      <!-- Photo de groupe du Forum 2026, en fond plein écran -->
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/photos/forum/hero-forum-2400.webp"
+             srcset="assets/photos/forum/hero-forum-1200.webp 1200w, assets/photos/forum/hero-forum-2400.webp 2400w"
+             sizes="100vw" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
+      </div>
 
-          <!-- Vitrine Visuelle d'Impact basée sur le Logo Officiel -->
-          <div class="hero-brand-showcase reveal reveal-delay-2" aria-label="Symbole officiel et piliers de croissance Growth Together">
-            <div class="hero-brand-card">
-              <div class="hero-brand-header">
-                <span class="hero-brand-tag">Signature Officielle • GT</span>
-                <span class="hero-brand-live">En Mouvement</span>
-              </div>
-              <div class="hero-brand-visual-wrap">
-                <img src="assets/logo.png" alt="Monogramme officiel ascendant Growth Together" class="hero-brand-logo-img" width="190" height="190">
-                <div class="hero-tier-chip tier-1">
-                  <span class="chip-dot"></span>
-                  <span><strong>01. Ground</strong> • Ancrer</span>
-                </div>
-                <div class="hero-tier-chip tier-2">
-                  <span class="chip-dot"></span>
-                  <span><strong>02. Grow</strong> • Grandir</span>
-                </div>
-                <div class="hero-tier-chip tier-3">
-                  <span class="chip-dot"></span>
-                  <span><strong>03. Widen</strong> • Rayonner</span>
-                </div>
-              </div>
-              <div class="hero-brand-footer">
-                <span>Ground. Grow. Widen.™</span>
-                <span>Casablanca • Panafricain</span>
-              </div>
-            </div>
+      <div class="container hero-full-inner">
+        <div class="hero-content reveal">
+          <span class="hero-pill">Ground. Grow. Widen.™</span>
+          <h1 class="hero-title">Grandir seul est possible, <span class="hero-title-accent">grandir ensemble</span> est durable.</h1>
+          <p class="hero-description">
+            Growth Together accompagne la jeunesse africaine vers l'entrepreneuriat, le leadership et l'émancipation personnelle. Ensemble, bâtissons un continent où chaque jeune est acteur de son propre changement.
+          </p>
+          <div class="hero-actions">
+            <a href="#piliers" class="btn btn-primary btn-lg">Découvrir la démarche <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            <a href="forum/index.html" class="btn btn-accent btn-lg">Forum 2026 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
+
+      <a href="#piliers" class="hero-scroll" aria-label="Défiler vers la suite de la page">
+        <span>Défiler</span>
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
     </section>
 
     <!-- 2. Framework des 3 Piliers (Ground, Grow, Widen) -->
