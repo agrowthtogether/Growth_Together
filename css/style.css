@@ -1716,3 +1716,55 @@ body.dark-mode main > section.register-cta-section {
   color: var(--gt-interactive-accent-active); /* #FF773D */
   background-color: rgba(255, 119, 61, 0.12);
 }
+
+/* ==========================================================================
+   CONTRASTE (seuil WCAG AA 4,5:1 pour le texte courant)
+   Teintes à peine plus foncées que le bleu et l'orange élan de la charte.
+   ========================================================================== */
+
+/* Boutons : texte blanc lisible, dans les deux thèmes */
+.btn.btn-primary {
+  background-color: #267AA8;
+}
+
+.btn.btn-primary:hover {
+  background-color: #1F6690;
+}
+
+.btn.btn-accent {
+  background-color: #D23F00;
+}
+
+.btn.btn-accent:hover {
+  background-color: #B33600;
+}
+
+/* Le pied de page est sombre dans les deux thèmes */
+.footer-baseline {
+  color: #5EB2E2;
+}
+
+/* Mode clair : petits textes bleus et orange */
+[data-theme="light"] .section-tag,
+[data-theme="light"] .hero-baseline,
+[data-theme="light"] .founder-role,
+[data-theme="light"] .director-role,
+[data-theme="light"] .member-role,
+[data-theme="light"] .nav-link.active,
+[data-theme="light"] .timeline-time,
+[data-theme="light"] .legal-container a:not(.btn) {
+  color: #23719B;
+}
+
+[data-theme="light"] .badge-accent {
+  color: #C13A00;
+}
+
+/* Dans les panneaux sombres, le badge garde l'orange clair, quel que soit le thème */
+.forum-highlight-section .badge-accent,
+.register-cta-section .badge-accent,
+[data-theme="light"] .forum-highlight-section .badge-accent,
+[data-theme="light"] .register-cta-section .badge-accent {
+  color: #FF773D;
+  background-color: rgba(255, 119, 61, 0.12);
+}
